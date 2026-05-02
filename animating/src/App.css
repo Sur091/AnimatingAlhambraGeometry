@@ -1,0 +1,103 @@
+.app-container {
+  width: 100%;
+}
+
+/* Replaced scroll-snap with standard sections */
+.content-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+/* Constrain the inner content so it's readable on huge screens */
+.content-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+/* Responsive Split Layout */
+.layout-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .layout-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+.text-panel {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid var(--terracotta);
+}
+
+/* --- Theming Classes --- */
+.bg-lapis {
+  background-color: var(--lapis-blue);
+  color: var(--text-light);
+}
+
+.bg-lapis .text-panel {
+  background: rgba(26, 54, 93, 0.8);
+  color: var(--text-light);
+  border-left: 4px solid var(--gold);
+}
+
+.bg-lapis h2 {
+  color: var(--gold);
+  border-bottom-color: var(--terracotta);
+}
+
+.bg-stucco {
+  background-color: var(--stucco);
+  color: var(--text-dark);
+}
+
+/* Pure CSS Geometric Background Pattern for the Hero */
+/* Update your hero-pattern class */
+.hero-pattern {
+  background-color: var(--lapis-blue);
+  /* ... keep your existing complex background-image gradients here ... */
+  background-size: 100px 50px;
+  text-align: center;
+  
+  /* ADD THESE TWO LINES FOR PARALLAX */
+  background-attachment: fixed; 
+  background-position: center;
+}
+
+/* Update your animation-panel class */
+.animation-panel {
+  background: white;
+  padding: 0.1rem;
+  border-radius: 50%; 
+  box-shadow: inset 0 0 50px rgba(0,0,0,0.05), 0 20px 40px rgba(26, 54, 93, 0.1);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* ADD THESE LINES FOR HOVER/CLICK FEEDBACK */
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.animation-panel:hover {
+  transform: scale(1.03);
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.05), 0 30px 60px rgba(26, 54, 93, 0.2);
+}
+
+.animation-panel:active {
+  transform: scale(0.98); /* Satisfying 'click' push-in effect */
+}

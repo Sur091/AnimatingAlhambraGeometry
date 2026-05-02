@@ -1,0 +1,55 @@
+:root {
+  /* Alhambra Color Palette */
+  --stucco: #F9F8F3;
+  --lapis-blue: #1A365D;
+  --terracotta: #A03221;
+  --gold: #D4AF37;
+  --text-dark: #2D3748;
+  --text-light: #EDF2F7;
+  
+  /* Typography */
+  --sans: system-ui, -apple-system, sans-serif;
+  --serif: 'Georgia', 'Times New Roman', serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--stucco);
+  color: var(--text-dark);
+  font-family: var(--sans);
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 3.5rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: var(--lapis-blue);
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: inherit;
+}
