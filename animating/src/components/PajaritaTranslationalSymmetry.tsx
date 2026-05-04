@@ -47,7 +47,7 @@ const tessellationVectors = [
   { dx: -3 * R, dy: 10 * H },
   { dx: -3 * R, dy: -2 * H },
   { dx: -3 * R, dy: -6 * H },
-  { dx: -6 * R, dy: 0 }, 
+  { dx: -6 * R, dy: 0 },
   { dx: -6 * R, dy: 4 * H },
   { dx: -6 * R, dy: 8 * H },
   { dx: -6 * R, dy: -4 * H },
@@ -81,15 +81,36 @@ const tileVariants: Variants = {
 };
 
 // 3. Translate the entire plane continuously
+const time_before_translation = tessellationVectors.length * 0.3 + drawDuration + 2;
 const planeVariants: Variants = {
   static: { x: 0, y: 0 },
   translate: {
     x: [0, 3 * R],
     y: [0, -2 * H],
     transition: {
-      delay: tessellationVectors.length * 0.3 + drawDuration + 2, // Wait for draw & fill
+      delay: time_before_translation,
       duration: 3,
       ease: "linear",
+    },
+  },
+  hide: {
+    opacity: 0,
+    transition: {
+      delay: 0, // hide at the start
+      duration: 0,
+    },
+  },
+  fadeIn: {
+    opacity: [0, 0.3, 0.3, 0],
+    transition: {
+      duration: 3 + 1,
+      times: [
+        0,
+        0.5/4,
+        3.5/4,
+        1,
+      ],
+      delay: time_before_translation - 0.5,
     },
   },
 };
@@ -156,6 +177,23 @@ const PajaritaTranslationalSymmetry: React.FC = () => {
                 initial="hidden"
                 animate={["draw", "fillIn"]}
                 variants={tileVariants}
+              />
+            ))}
+          </motion.g>
+          <motion.g
+            initial="hide"
+            animate="fadeIn"
+            variants={planeVariants}
+          >
+            {tessellationVectors.map((vector, i) => (
+              <motion.path
+                key={i}
+                d={pajaritaPath}
+                style={{ x: vector.dx, y: vector.dy }}
+                stroke="#3b82f6"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             ))}
           </motion.g>

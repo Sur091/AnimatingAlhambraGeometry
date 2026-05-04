@@ -103,6 +103,7 @@ const tileVariants: Variants = {
 };
 
 // 3. Translate the entire plane continuously
+const time_before_rotation = tessellationVectors.length * 0.3 + drawDuration + 2;
 const planeVariants: Variants = {
   static: { x: 0, y: 0 },
   translate: {
@@ -112,6 +113,19 @@ const planeVariants: Variants = {
       delay: tessellationVectors.length * 0.3 + drawDuration + 2, // Wait for draw & fill
       duration: 3,
       ease: "linear",
+    },
+  },
+  fadeIn: {
+    opacity: [0, 0.3, 0.3, 0],
+    transition: {
+      duration: 3 + 1,
+      times: [
+        0,
+        0.5/4,
+        3.5/4,
+        1,
+      ],
+      delay: time_before_rotation - 0.5,
     },
   },
 };
@@ -186,6 +200,23 @@ const AirplaneTranslationalSymmetry: React.FC = () => {
                 initial="hidden"
                 animate={["draw", "fillIn"]}
                 variants={tileVariants}
+              />
+            ))}
+          </motion.g>
+          <motion.g
+            initial="hide"
+            animate="fadeIn"
+            variants={planeVariants}
+          >
+            {tessellationVectors.map((vector, i) => (
+              <motion.path
+                key={i}
+                d={airplanePath(start + (i % 2) * Math.PI)}
+                style={{ x: vector.dx, y: vector.dy }}
+                stroke="#3b82f6"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             ))}
           </motion.g>

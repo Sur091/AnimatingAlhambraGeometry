@@ -12,7 +12,7 @@ const App: React.FC = () => {
   return (
     <div className="app-container">
       {/* Section 1: Introduction */}
-      <section className="content-section hero-pattern">
+      <section className="topic-section styleOne hero-pattern">
         <div
           className="content-wrapper"
           style={{
@@ -22,6 +22,16 @@ const App: React.FC = () => {
           }}
         >
           <h1>Geometry in the Alhambra</h1>
+        </div>
+        <div
+          className="content-wrapper"
+          style={{
+            background: "rgba(26, 54, 93, 0.85)",
+            padding: "4rem",
+            borderRadius: "12px",
+          }}
+        >
+          <h2 style={{ color: "white" }}>Suraj Acharya and Libby Haar</h2>
         </div>
       </section>
 
