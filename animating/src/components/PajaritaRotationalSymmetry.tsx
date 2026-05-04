@@ -85,6 +85,7 @@ const planeVariants: Variants = {
   static: { x: 0, y: 0 },
   rotate: {
     rotate: 120,
+    transformOrigin: "center",
     transition: {
       delay: tessellationVectors.length * 0.3 + drawDuration + 2, // Wait for draw & fill
       duration: 3,

@@ -82,6 +82,21 @@
   border-left: 4px solid var(--terracotta);
 }
 
+.image-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: repeat(2, 1fr);    
+  gap: 150px 10px;                             
+}
+
+
 /* --- Theming Classes --- */
 .bg-lapis {
   background-color: var(--lapis-blue);
@@ -127,6 +142,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   
   /* ADD THESE LINES FOR HOVER/CLICK FEEDBACK */
   cursor: pointer;
