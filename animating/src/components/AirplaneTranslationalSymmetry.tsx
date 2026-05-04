@@ -214,6 +214,7 @@ const AirplaneTranslationalSymmetry: React.FC = () => {
                 d={airplanePath(start + (i % 2) * Math.PI)}
                 style={{ x: vector.dx, y: vector.dy }}
                 stroke="#3b82f6"
+                fill="rgba(59, 130, 246, 0.5)"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
