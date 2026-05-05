@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { motion, time, type Variants } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 // --- Scroll Trigger Hook ---
 function useInView<T extends Element>(
@@ -35,30 +35,27 @@ const tessellationVectors = [
   { dx: 0, dy: 8 * H },
   { dx: 0, dy: -4 * H },
   { dx: 0, dy: -8 * H },
-  { dx: 0, dy: -12 * H },
+
+  { dx: -3 * R, dy: 2 * H },
+  { dx: -3 * R, dy: 6 * H },
+  { dx: -3 * R, dy: -2 * H },
+  { dx: -3 * R, dy: -6 * H },
+
   { dx: 3 * R, dy: 2 * H },
   { dx: 3 * R, dy: 6 * H },
   { dx: 3 * R, dy: -2 * H },
   { dx: 3 * R, dy: -6 * H },
-  { dx: 3 * R, dy: -10 * H },
-  { dx: 6 * R, dy: 0 },
-  { dx: 6 * R, dy: 4 * H },
-  { dx: 6 * R, dy: -4 * H },
-  { dx: -3 * R, dy: 2 * H },
-  { dx: -3 * R, dy: 6 * H },
-  { dx: -3 * R, dy: 10 * H },
-  { dx: -3 * R, dy: -2 * H },
-  { dx: -3 * R, dy: -6 * H },
-  { dx: -3 * R, dy: -10 * H },
+
   { dx: -6 * R, dy: 0 },
   { dx: -6 * R, dy: 4 * H },
   { dx: -6 * R, dy: 8 * H },
   { dx: -6 * R, dy: -4 * H },
   { dx: -6 * R, dy: -8 * H },
+
+  { dx: 6 * R, dy: 0 },
+
   { dx: -9 * R, dy: 2 * H },
   { dx: -9 * R, dy: -2 * H },
-  { dx: -9 * R, dy: -6 * H },
-  { dx: -9 * R, dy: 6 * H },
 ];
 
 // --- Animation Variants ---
@@ -86,9 +83,9 @@ const tileVariants: Variants = {
 };
 
 // 3. Translate the entire plane continuously
-const time_before_rotation = tessellationVectors.length * 0.3 + drawDuration + 2; 
+const time_before_rotation =
+  tessellationVectors.length * 0.3 + drawDuration + 2;
 const planeVariants: Variants = {
-  static: { x: 0, y: 0 },
   rotate: {
     rotate: 120,
     transition: {
@@ -101,12 +98,7 @@ const planeVariants: Variants = {
     opacity: [0, 0.3, 0.3, 0],
     transition: {
       duration: 3 + 1,
-      times: [
-        0,
-        0.5/4,
-        3.5/4,
-        1,
-      ],
+      times: [0, 0.5 / 4, 3.5 / 4, 1],
       delay: time_before_rotation - 0.5,
     },
   },
@@ -123,13 +115,13 @@ const PajaritaRotationalSymmetry: React.FC = () => {
 
   // The exact SVG path for a single Pajarita
   const pajaritaPath = `
-    M -${2 * R}, 0
-    A ${R} ${R} 0 0 0 ${-R / 2}, -${H}
-    A ${R} ${R} 0 0 1 ${R}, -${H * 2}
-    A ${R} ${R} 0 0 0 ${R}, 0
-    A ${R} ${R} 0 0 1 ${R}, ${H * 2}
-    A ${R} ${R} 0 0 0 ${-R / 2}, ${H}
-    A ${R} ${R} 0 0 1 ${-2 * R}, 0
+    M 0, 0
+    A ${R} ${R} 0 0 1 ${1.5 * R},${(-R * Math.sqrt(3)) / 2}
+    A ${R} ${R} 0 0 0 ${3 * R},${-R * Math.sqrt(3)}
+    A ${R} ${R} 0 0 1 ${3 * R}, 0
+    A ${R} ${R} 0 0 0 ${3 * R}, ${R * Math.sqrt(3)}
+    A ${R} ${R} 0 0 1 ${1.5 * R},${(R * Math.sqrt(3)) / 2}
+    A ${R} ${R} 0 0 0 0, 0
     Z
   `;
 
@@ -142,7 +134,7 @@ const PajaritaRotationalSymmetry: React.FC = () => {
         minHeight: "400px",
         display: "flex",
         justifyContent: "center",
-        overflow: "hidden",
+        overflow: "visible",
         borderRadius: "50%",
       }}
       title="Click to restart animation"
@@ -155,46 +147,42 @@ const PajaritaRotationalSymmetry: React.FC = () => {
           height="100%" // THE FIX: Fills the square container perfectly
           style={{ overflow: "visible" }}
         >
-          {/* The parent group applies the infinite translation to all children */}
-          <motion.g
-            style={{ originX: `${9 * R}px`, originY: `${14 * H}px` }}
-            initial="static"
-            animate="rotate"
-            variants={planeVariants}
-          >
+          {/* The parent group applies the rotation to all children */}
+          <motion.g style={{ originX: "48.5%", originY: "49.5%" }} animate="rotate" variants={planeVariants}>
             {tessellationVectors.map((vector, i) => (
-              <motion.path
-                key={i}
-                d={pajaritaPath}
-                custom={i}
-                style={{ x: vector.dx, y: vector.dy }}
-                stroke="#3b82f6"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                initial="hidden"
-                animate={["draw", "fillIn"]}
-                variants={tileVariants}
-              />
+              <motion.g key={i} style={{ x: vector.dx, y: vector.dy }}>
+                <motion.path
+                  d={pajaritaPath}
+                  custom={i}
+                  stroke="#3b82f6"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  initial="hidden"
+                  animate={["draw", "fillIn"]}
+                  variants={tileVariants}
+                />
+              </motion.g>
             ))}
+            <circle cx="0" cy="0" r="2" fill="red" />
           </motion.g>
+
           <motion.g
-            style={{ originX: `${9 * R}px`, originY: `${14 * H}px` }}
             initial="hide"
-            animate="fadeIn"
+            animate={["fadeIn"]}
             variants={planeVariants}
           >
             {tessellationVectors.map((vector, i) => (
-              <motion.path
-                key={i}
-                d={pajaritaPath}
-                style={{ x: vector.dx, y: vector.dy }}
-                stroke="#3b82f6"
-                fill="rgba(59, 130, 246, 0.5)"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
+              <motion.g key={i} style={{ x: vector.dx, y: vector.dy }}>
+                <motion.path
+                  d={pajaritaPath}
+                  stroke="#3b82f6"
+                  fill="rgba(59, 130, 246, 0.5)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </motion.g>
             ))}
           </motion.g>
         </svg>

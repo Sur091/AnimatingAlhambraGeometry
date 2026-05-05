@@ -7,6 +7,10 @@ import AirplaneTranslationalSymmetry from "./components/AirplaneTranslationalSym
 import Bone from "./components/Bone";
 import Airplane from "./components/Airplane";
 
+import alhambraImage from "./assets/alhambra.jpeg"
+import compassImage from "./assets/compass.jpg"
+import straightEdgeImage from "./assets/straightEdge.jpg"
+
 import "./App.css";
 
 const App: React.FC = () => {
@@ -107,7 +111,7 @@ const App: React.FC = () => {
         </div>
         <div>
           <div className="image-panel">
-            <img src="/src/assets/alhambra.jpeg" alt="Alhambra tiling" />
+            <img src={alhambraImage} alt="Alhambra tiling" />
             <div className="caption">
               <p>Image from somewhere</p>
             </div>
@@ -119,14 +123,14 @@ const App: React.FC = () => {
       <section className="content-section bg-stucco">
         <div>
           <div className="image-panel">
-            <img src="/src/assets/compass.jpg" alt="Compass" width="100%" />
+            <img src={compassImage} alt="Compass" width="100%" />
             <div className="caption">
               <p>Image from somewhere</p>
             </div>
           </div>
           <div className="image-panel">
             <img
-              src="/src/assets/straightEdge.jpg"
+              src={straightEdgeImage}
               alt="Straightedge"
               width="100%"
             />
