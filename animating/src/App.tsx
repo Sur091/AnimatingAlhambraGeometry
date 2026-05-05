@@ -7,6 +7,7 @@ import AirplaneTranslationalSymmetry from "./components/AirplaneTranslationalSym
 import Bone from "./components/Bone";
 import Airplane from "./components/Airplane";
 import AirplaneRotationalSymmetry from "./components/AirplaneRotationalSymmetry";
+import AirplaneReflectionSymmetry from "./components/AirplaneReflectionSymmetry";
 import AirplaneGlideReflectionalSymmetry from "./components/AirplaneGlideReflectionSymmetry";
 
 import alhambraImage from "./assets/alhambra.jpeg";
@@ -377,6 +378,19 @@ const App: React.FC = () => {
       </section>
 
       {/* Section 8: The Airplane Reflection Symmetry */}
+      <section className="content-section bg-stucco">
+        <div className="content-wrapper layout-split">
+          <div className="text-panel">
+            <h2>4.4 The Airplane Reflection Symmetry</h2>
+            <p>The Airplane as Reflection Symmetry</p>
+          </div>
+          <div className="animation-panel">
+            <AirplaneReflectionSymmetry />
+          </div>
+        </div>
+      </section>
+      
+      {/* Section 9: The Airplane Glide Reflection Symmetry */}
       <section className="content-section bg-lapis">
         <div className="content-wrapper layout-split">
           <div className="text-panel">
