@@ -162,7 +162,7 @@ const App: React.FC = () => {
             background: "rgba(26, 54, 93, 0.85)",
             padding: "4rem",
             borderRadius: "12px",
-            width: "50%",
+            width: "45%",
           }}
         >
           <h2 style={{ color: "var(--stucco)" }}>Symmetry</h2>

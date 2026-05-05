@@ -103,7 +103,7 @@ const tileVariants: Variants = {
 };
 
 // 3. Translate the entire plane continuously
-const time_before_rotation = tessellationVectors.length * 0.3 + drawDuration + 2;
+const time_before_translation = tessellationVectors.length * 0.3 + drawDuration + 2;
 const planeVariants: Variants = {
   static: { x: 0, y: 0 },
   translate: {
@@ -125,7 +125,7 @@ const planeVariants: Variants = {
         3.5/4,
         1,
       ],
-      delay: time_before_rotation - 0.5,
+      delay: time_before_translation - 0.5,
     },
   },
 };
