@@ -90,7 +90,7 @@ const planeVariants: Variants = {
     transition: {
       delay: time_before_translation,
       duration: 3,
-      ease: "linear",
+      ease: "easeInOut",
     },
   },
   hide: {

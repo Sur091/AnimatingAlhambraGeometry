@@ -82,29 +82,58 @@ const tileVariants: Variants = {
   }),
 };
 
-// 3. Translate the entire plane continuously
+// 3. Rotate the entire plane continuously
 const time_before_rotation =
   tessellationVectors.length * 0.3 + drawDuration + 2;
 const planeVariants: Variants = {
-  rotate: {
-    rotate: 120,
+  rotate3times: {
+    rotate: [0, 120, 120, 240, 240, 360],
     transition: {
       delay: time_before_rotation, // Wait for draw & fill
-      duration: 3,
-      ease: "linear",
+      duration: 12,
+      times: [0, 2 / 8, 3 / 8, 5 / 8, 6 / 8, 1],
+      ease: "easeInOut",
+    },
+  },
+  rotate6times: {
+    rotate: [0, 60, 60, 120, 120, 180, 180, 240, 240, 300, 300, 360],
+    transition: {
+      delay: time_before_rotation, // Wait for draw & fill
+      duration: 12,
+      times: [
+        0,
+        2 / 17,
+        3 / 17,
+        5 / 17,
+        6 / 17,
+        8 / 17,
+        9 / 17,
+        11 / 17,
+        12 / 17,
+        14 / 17,
+        15 / 17,
+        1,
+      ],
+      ease: "easeInOut",
     },
   },
   fadeIn: {
     opacity: [0, 0.3, 0.3, 0],
     transition: {
-      duration: 3 + 1,
-      times: [0, 0.5 / 4, 3.5 / 4, 1],
+      duration: 12 + 1,
+      times: [0, 1 / 24, 23 / 24, 1],
       delay: time_before_rotation - 0.5,
     },
   },
 };
 
-const PajaritaRotationalSymmetry: React.FC = () => {
+interface PajaritaRotationalSymmetryProps {
+  threeFold: boolean;
+}
+
+const PajaritaRotationalSymmetry: React.FC<PajaritaRotationalSymmetryProps> = ({
+  threeFold,
+}) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const startAnimation = useInView(containerRef, { threshold: 0.3 });
   const [restartKey, setRestartKey] = useState(0);
@@ -125,6 +154,8 @@ const PajaritaRotationalSymmetry: React.FC = () => {
     Z
   `;
 
+  const rotateNTimes = threeFold ? "rotate3times" : "rotate6times";
+
   return (
     <div
       ref={containerRef}
@@ -134,7 +165,7 @@ const PajaritaRotationalSymmetry: React.FC = () => {
         minHeight: "400px",
         display: "flex",
         justifyContent: "center",
-        overflow: "visible",
+        overflow: "hidden",
         borderRadius: "50%",
       }}
       title="Click to restart animation"
@@ -148,7 +179,11 @@ const PajaritaRotationalSymmetry: React.FC = () => {
           style={{ overflow: "visible" }}
         >
           {/* The parent group applies the rotation to all children */}
-          <motion.g style={{ originX: "48.5%", originY: "49.5%" }} animate="rotate" variants={planeVariants}>
+          <motion.g
+            style={{ originX: "48.5%", originY: "49.5%" }}
+            animate={rotateNTimes}
+            variants={planeVariants}
+          >
             {tessellationVectors.map((vector, i) => (
               <motion.g key={i} style={{ x: vector.dx, y: vector.dy }}>
                 <motion.path
@@ -164,7 +199,7 @@ const PajaritaRotationalSymmetry: React.FC = () => {
                 />
               </motion.g>
             ))}
-            <circle cx="0" cy="0" r="2" fill="red" />
+            <circle cx="0" cy="0" r="3" fill="rgba(30, 60, 246, 1)" />
           </motion.g>
 
           <motion.g

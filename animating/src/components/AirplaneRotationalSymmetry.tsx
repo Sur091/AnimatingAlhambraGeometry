@@ -37,7 +37,6 @@ const tessellationVectors = [
   { dx: 0, dy: 4 * R },
   { dx: 0, dy: 6 * R },
 
-  
   { dx: 2 * R, dy: 6 * R },
   { dx: 2 * R, dy: 4 * R },
   { dx: 2 * R, dy: 2 * R },
@@ -52,7 +51,7 @@ const tessellationVectors = [
   { dx: -2 * R, dy: 2 * R },
   { dx: -2 * R, dy: 4 * R },
   { dx: -2 * R, dy: 6 * R },
-  
+
   { dx: -4 * R, dy: 6 * R },
   { dx: -4 * R, dy: 4 * R },
   { dx: -4 * R, dy: 2 * R },
@@ -60,14 +59,14 @@ const tessellationVectors = [
   { dx: -4 * R, dy: -2 * R },
   { dx: -4 * R, dy: -4 * R },
   { dx: -4 * R, dy: -6 * R },
-  
+
   { dx: 4 * R, dy: 4 * R },
   { dx: 4 * R, dy: 2 * R },
   { dx: 4 * R, dy: 0 },
   { dx: 4 * R, dy: -2 * R },
   { dx: 4 * R, dy: -4 * R },
   { dx: 4 * R, dy: -6 * R },
-  
+
   { dx: -6 * R, dy: -6 * R },
   { dx: -6 * R, dy: -4 * R },
   { dx: -6 * R, dy: -2 * R },
@@ -75,7 +74,6 @@ const tessellationVectors = [
   { dx: -6 * R, dy: 2 * R },
   { dx: -6 * R, dy: 4 * R },
   { dx: -6 * R, dy: 6 * R },
-
 ];
 
 // --- Animation Variants ---
@@ -103,34 +101,43 @@ const tileVariants: Variants = {
 };
 
 // 3. Translate the entire plane continuously
-const time_before_rotation = tessellationVectors.length * 0.3 + drawDuration + 2;
+const time_before_rotation =
+  tessellationVectors.length * 0.3 + drawDuration + 2;
 const planeVariants: Variants = {
-  static: { x: 0, y: 0 },
-  translate: {
-    x: [0, 2 * R],
-    y: [0, -2 * R],
+  rotate2times: {
+    rotate: [0, 180, 180, 360],
     transition: {
-      delay: tessellationVectors.length * 0.3 + drawDuration + 2, // Wait for draw & fill
-      duration: 3,
+      delay: time_before_rotation, // Wait for draw & fill
+      duration: 8,
+      times: [0, 2 / 5, 3 / 5, 1],
+      ease: "easeInOut",
+    },
+  },
+  rotate4times: {
+    rotate: [0, 90, 90, 180, 180, 270, 270, 360],
+    transition: {
+      delay: time_before_rotation, // Wait for draw & fill
+      duration: 8,
+      times: [0, 2 / 11, 3 / 11, 5 / 11, 6 / 11, 8 / 11, 9 / 11, 1],
       ease: "easeInOut",
     },
   },
   fadeIn: {
     opacity: [0, 0.3, 0.3, 0],
     transition: {
-      duration: 3 + 1,
-      times: [
-        0,
-        0.5/4,
-        3.5/4,
-        1,
-      ],
+      duration: 8 + 1,
+      times: [0, 0.5 / 4, 3.5 / 4, 1],
       delay: time_before_rotation - 0.5,
     },
   },
 };
 
-const AirplaneTranslationalSymmetry: React.FC = () => {
+interface AirplaneRotationalSymmetryProps {
+  twoFold: boolean;
+}
+const AirplaneTranslationalSymmetry: React.FC<
+  AirplaneRotationalSymmetryProps
+> = ({ twoFold }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const startAnimation = useInView(containerRef, { threshold: 0.3 });
   const [restartKey, setRestartKey] = useState(0);
@@ -159,6 +166,7 @@ const AirplaneTranslationalSymmetry: React.FC = () => {
   `;
   };
 
+  const rotateNTimes = twoFold ? "rotate2times" : "rotate4times";
   return (
     <div
       ref={containerRef}
@@ -182,11 +190,7 @@ const AirplaneTranslationalSymmetry: React.FC = () => {
           style={{ overflow: "visible" }}
         >
           {/* The parent group applies the infinite translation to all children */}
-          <motion.g
-            initial="static"
-            animate="translate"
-            variants={planeVariants}
-          >
+          <motion.g animate={rotateNTimes} variants={planeVariants}>
             {tessellationVectors.map((vector, i) => (
               <motion.path
                 key={i}
@@ -203,11 +207,8 @@ const AirplaneTranslationalSymmetry: React.FC = () => {
               />
             ))}
           </motion.g>
-          <motion.g
-            initial="hide"
-            animate="fadeIn"
-            variants={planeVariants}
-          >
+          <circle cx={`${-R}`} cy="0" r="3" fill="rgba(30, 60, 246, 1)" />
+          <motion.g initial="hide" animate="fadeIn" variants={planeVariants}>
             {tessellationVectors.map((vector, i) => (
               <motion.path
                 key={i}

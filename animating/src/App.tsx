@@ -6,10 +6,11 @@ import PajaritaRotationalSymmetry from "./components/PajaritaRotationalSymmetry"
 import AirplaneTranslationalSymmetry from "./components/AirplaneTranslationalSymmetry";
 import Bone from "./components/Bone";
 import Airplane from "./components/Airplane";
+import AirplaneRotationalSymmetry from "./components/AirplaneRotationalSymmetry";
 
-import alhambraImage from "./assets/alhambra.jpeg"
-import compassImage from "./assets/compass.jpg"
-import straightEdgeImage from "./assets/straightEdge.jpg"
+import alhambraImage from "./assets/alhambra.jpeg";
+import compassImage from "./assets/compass.jpg";
+import straightEdgeImage from "./assets/straightEdge.jpg";
 
 import "./App.css";
 
@@ -129,11 +130,7 @@ const App: React.FC = () => {
             </div>
           </div>
           <div className="image-panel">
-            <img
-              src={straightEdgeImage}
-              alt="Straightedge"
-              width="100%"
-            />
+            <img src={straightEdgeImage} alt="Straightedge" width="100%" />
             <div className="caption">
               <p>Image from somewhere</p>
             </div>
@@ -285,15 +282,27 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/*{Pajarita Rotatioonal Symmetry}*/}
+      {/*{Pajarita Rotatioonal Symmetry, 3-Fold Rotation}*/}
       <section className="content-section bg-lapis">
         <div className="content-wrapper layout-split">
           <div className="text-panel">
             <h2>2.3 The Rotational Symmetry of the Pajarita (Bow-tie)</h2>
             <p>We know that the Pajarita has two rotational symmetries</p>
           </div>
-          <div className="animation-panel">
-            <PajaritaRotationalSymmetry />
+            <div className="animation-panel">
+            <PajaritaRotationalSymmetry threeFold={true} />
+          </div>
+        </div>
+      </section>
+      {/*{Pajarita Rotatioonal Symmetry, 6-Fold Rotation}*/}
+      <section className="content-section bg-stucco">
+        <div className="content-wrapper layout-split">
+          <div className="text-panel">
+            <h2>2.3 The Rotational Symmetry of the Pajarita (Bow-tie)</h2>
+            <p>We know that the Pajarita has two rotational symmetries</p>
+          </div>
+            <div className="animation-panel">
+            <PajaritaRotationalSymmetry threeFold={false} />
           </div>
         </div>
       </section>
@@ -336,6 +345,32 @@ const App: React.FC = () => {
           </div>
           <div className="animation-panel">
             <AirplaneTranslationalSymmetry />
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6: The Airplane Rotational Symmetry: Two-Fold */}
+      <section className="content-section bg-stucco">
+        <div className="content-wrapper layout-split">
+          <div className="text-panel">
+            <h2>4.3 The Airplane Rotational Symmetry</h2>
+            <p>The Airplane as Rotational Symmmetry</p>
+          </div>
+          <div className="animation-panel">
+            <AirplaneRotationalSymmetry twoFold={true} />
+          </div>
+        </div>
+      </section>
+
+      {/* Section 7: The Airplane Rotational Symmetry: Four-Fold */}
+      <section className="content-section bg-lapis">
+        <div className="content-wrapper layout-split">
+          <div className="text-panel">
+            <h2>4.3 The Airplane Rotational Symmetry</h2>
+            <p>The Airplane as Rotational Symmmetry</p>
+          </div>
+          <div className="animation-panel">
+            <AirplaneRotationalSymmetry twoFold={false} />
           </div>
         </div>
       </section>
