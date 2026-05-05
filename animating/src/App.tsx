@@ -81,7 +81,7 @@ const App: React.FC = () => {
             which only serves to widen the gap between them. By constructing the
             fundamental pieces of the tile work seen in the Alhambra brought to
             life through animation, we want to depict how math and art are just
-            two sides of the same coin.. We will particularly explore the
+            two sides of the same coin. We will particularly explore the
             interactions of color and symmetry in tilings found in the Comares
             Palace.
           </p>
@@ -290,33 +290,33 @@ const App: React.FC = () => {
               <div className="animation-panel">
                 <TranslationAnimation />
               </div>
-              <div className="caption">
+              {/*<div className="caption">
                 <p>Image from somewhere</p>
-              </div>
+              </div>*/}
             </div>
             <div className="image-panel">
               <div className="animation-panel">
                 <ReflectionAnimation />
               </div>
-              <div className="caption">
+              {/*<div className="caption">
                 <p>Image from somewhere</p>
-              </div>
+              </div>*/}
             </div>
             <div className="image-panel">
               <div className="animation-panel">
                 <RotationAnimation />
               </div>
-              <div className="caption">
+              {/*<div className="caption">
                 <p>Image from somewhere</p>
-              </div>
+              </div>*/}
             </div>
             <div className="image-panel">
               <div className="animation-panel">
                 <GlideReflectionAnimation />
               </div>
-              <div className="caption">
+              {/*<div className="caption">
                 <p>Image from somewhere</p>
-              </div>
+              </div>*/}
             </div>
           </div>
         </div>
@@ -371,16 +371,16 @@ const App: React.FC = () => {
               One example of the Pajarita can be found in the Sala de las Camas
               (or the hall of the beds), as seen in figure 5 which can be found
               in the Ba˜no de Comares in the Comares Palace. However, this is
-              not the only example. Pajaritas can also be found in the C´amara
-              Fr´ıa or the Cold Chamber, as seen in figure 6 which is also in
-              the Ba˜no de Comares in the Comares Palace.<sup>9</sup> In this
-              example, we see that the tiling is chromatically chaotic,
-              Gr¨unbaum argues that "the artists destroyed the symmetries to
-              make the tilings less monotonous."<sup>10</sup> Another variation
-              of the pajarita can be seen in the side alcoves of the Patio de
-              los Arrayanes in the court of the Myrtles, as found in figure 7.
-              In this example, the middles of every pajarita is filled either by
-              a hexagon or a 6 pointed star. We will primary break down the
+              not the only example. Pajaritas can also be found in the Cámara
+              Fría or the Cold Chamber, as seen in figure 6 which is also in the
+              Ba˜no de Comares in the Comares Palace.<sup>9</sup> In this
+              example, we see that the tiling is chromatically chaotic, Grünbaum
+              argues that "the artists destroyed the symmetries to make the
+              tilings less monotonous."<sup>10</sup> Another variation of the
+              pajarita can be seen in the side alcoves of the Patio de los
+              Arrayanes in the court of the Myrtles, as found in figure 7. In
+              this example, the middles of every pajarita is filled either by a
+              hexagon or a 6 pointed star. We will primary break down the
               symmetry of the tiling in the Sala de las Camas, however, it is
               clear the pajarita is a common symbol throughout the Alhambra.
               When classifying the symmetries of the tiling in the Sala de las
@@ -389,10 +389,10 @@ const App: React.FC = () => {
               tiling.
             </p>
             <p className="footNotes">
-              <sup>9</sup> Empar´an, “The Planar Crystallography Groups as an
+              <sup>9</sup> Emparán, “The Planar Crystallography Groups as an
               Iconographic Analysis Tool in Islamic Art”, 306 -307
               <br />
-              <sup>10</sup> Gr¨unbaum, “What Symmetry Groups Are Present in the
+              <sup>10</sup> Grünbaum, “What Symmetry Groups Are Present in the
               Alhambra?” 673
             </p>
           </div>
@@ -400,7 +400,7 @@ const App: React.FC = () => {
             <img src={pajaritaPalaceOfCharlesV} alt="Pajarita" />
             <div className="caption">
               <p>
-                Figure 6: Pajaritas in the C´amara Fr´ıa, 13th-14th century,
+                Figure 6: Pajaritas in the Cámara Fría, 13th-14th century,
                 Nasrid, Grenada, Spain. Image by William Keighley (1889-1984).
                 Architects: Unknown 11th-14th century architects, Pedro Machuca
                 (Spanish, died 1550), and Juan de Herrera (Spanish, ca.
@@ -499,7 +499,7 @@ const App: React.FC = () => {
             <p className="footNotes">
               <sup>11</sup> Bodner, “Constructing and Classifying Designs of
               al-Andalus,” 67 <br />
-              <sup>12</sup> Gr¨unbaum, “What Symmetry Groups Are Present in the
+              <sup>12</sup> Grünbaum, “What Symmetry Groups Are Present in the
               Alhambra?” 671
             </p>
           </div>
@@ -543,7 +543,7 @@ const App: React.FC = () => {
             <p className="footNotes" style={{ color: "black" }}>
               <sup>13</sup> Bodner, “Constructing and Classifying Designs of
               al-Andalus,” 67 <br />
-              <sup>14</sup> Gr¨unbaum, “What Symmetry Groups Are Present in the
+              <sup>14</sup> Grünbaum, “What Symmetry Groups Are Present in the
               Alhambra?” 671
               <br />
             </p>
@@ -589,7 +589,7 @@ const App: React.FC = () => {
               426 <br />
               <sup>16</sup> Ortega, “An Introduction to the Mathematics in the
               Alhambra of Granada” <br />
-              <sup>17</sup> Empar´an, “The Planar Crystallography Groups as an
+              <sup>17</sup> Emparán, “The Planar Crystallography Groups as an
               Iconographic Analysis Tool in Islamic Art,” 306 <br />
             </p>
           </div>
@@ -625,7 +625,7 @@ const App: React.FC = () => {
             <p className="footNotes" style={{ color: "black" }}>
               <sup>18</sup> Ortega, “An Introduction to the Mathematics in the
               Alhambra of Granada” <br />
-              <sup>19</sup> Empar´an, “The Planar Crystallography Groups as an
+              <sup>19</sup> Emparán, “The Planar Crystallography Groups as an
               Iconographic Analysis Tool in Islamic Art,” 306
             </p>
           </div>
@@ -821,20 +821,20 @@ const App: React.FC = () => {
             Bodner, B. Lynn. 2003. “Construction and Classifying Designs of
             al-Andalus.” In Meet- ing Alhambra, ISAMA-BRIDGES Conference
             Proceedings, edited by Javier Barrallo, Nathaniel Friedman, Juan
-            Antonio Maldonado, Jos´e Mart´ınez-Aroza, Reza Sarhangi, and Carlo
-            S´equin, 61–68. Granada, Spain: University of Granada. isbn:
+            Antonio Maldonado, José Martínez-Aroza, Reza Sarhangi, and Carlo
+            Séquin, 61–68. Granada, Spain: University of Granada. isbn:
             84-930669-1-5.
           </p>
           <p className="references">
-            Empar´an, Mar´ıa Antonieta. 2019. “The Planar Crystallography Groups
+            Emparán, María Antonieta. 2019. “The Planar Crystallography Groups
             as an Iconographic Analysis Tool in Islamic Art.” In Proceedings of
-            Bridges 2019: Mathematics, Art, Mu- sic, Architecture, Education,
-            Culture, edited by Susan Goldstine, Douglas McKenna, and Krist´of
+            Bridges 2019: Mathematics, Art, Music, Architecture, Education,
+            Culture, edited by Susan Goldstine, Douglas McKenna, and Kristóf
             Fenyvesi, 303–310. Phoenix, Arizona: Tessellations Publishing. isbn:
             978-1- 938664-27-4.
           </p>
           <p className="references">
-            Gr¨unbaum, Branko. 2006. “What Symmetry Groups are Present in the
+            Grünbaum, Branko. 2006. “What Symmetry Groups are Present in the
             Alhambra.” Notices of the AMS 53 (6): 670–673.
           </p>
           <p className="references">
@@ -853,8 +853,8 @@ const App: React.FC = () => {
             Alhambra of Granada.” Eur. Math. Soc. Mag. 135:12–19.
           </p>
           <p className="references">
-            P´erez-G´omez, Rafael. 1987. “The four regular mosaics missing in
-            the Alhambra.” Computers & Mathematics with Applications 14 (2):
+            Pérez-Gómez, Rafael. 1987. “The four regular mosaics missing in the
+            Alhambra.” Computers & Mathematics with Applications 14 (2):
             133–137.
           </p>
           <p className="references">
