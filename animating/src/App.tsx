@@ -7,6 +7,7 @@ import AirplaneTranslationalSymmetry from "./components/AirplaneTranslationalSym
 import Bone from "./components/Bone";
 import Airplane from "./components/Airplane";
 import AirplaneRotationalSymmetry from "./components/AirplaneRotationalSymmetry";
+import AirplaneGlideReflectionalSymmetry from "./components/AirplaneGlideReflectionSymmetry";
 
 import alhambraImage from "./assets/alhambra.jpeg";
 import compassImage from "./assets/compass.jpg";
@@ -289,7 +290,7 @@ const App: React.FC = () => {
             <h2>2.3 The Rotational Symmetry of the Pajarita (Bow-tie)</h2>
             <p>We know that the Pajarita has two rotational symmetries</p>
           </div>
-            <div className="animation-panel">
+          <div className="animation-panel">
             <PajaritaRotationalSymmetry threeFold={true} />
           </div>
         </div>
@@ -301,7 +302,7 @@ const App: React.FC = () => {
             <h2>2.3 The Rotational Symmetry of the Pajarita (Bow-tie)</h2>
             <p>We know that the Pajarita has two rotational symmetries</p>
           </div>
-            <div className="animation-panel">
+          <div className="animation-panel">
             <PajaritaRotationalSymmetry threeFold={false} />
           </div>
         </div>
@@ -341,7 +342,7 @@ const App: React.FC = () => {
         <div className="content-wrapper layout-split">
           <div className="text-panel">
             <h2>4.2 The Airplane Translational Symmetry</h2>
-            <p>The Airplane as Transaltional Symmmetry</p>
+            <p>The Airplane as Translational Symmetry</p>
           </div>
           <div className="animation-panel">
             <AirplaneTranslationalSymmetry />
@@ -354,7 +355,7 @@ const App: React.FC = () => {
         <div className="content-wrapper layout-split">
           <div className="text-panel">
             <h2>4.3 The Airplane Rotational Symmetry</h2>
-            <p>The Airplane as Rotational Symmmetry</p>
+            <p>The Airplane as Rotational Symmetry</p>
           </div>
           <div className="animation-panel">
             <AirplaneRotationalSymmetry twoFold={true} />
@@ -366,11 +367,24 @@ const App: React.FC = () => {
       <section className="content-section bg-lapis">
         <div className="content-wrapper layout-split">
           <div className="text-panel">
-            <h2>4.3 The Airplane Rotational Symmetry</h2>
-            <p>The Airplane as Rotational Symmmetry</p>
+            <h2>4.4 The Airplane Rotational Symmetry: Four-Fold</h2>
+            <p>The Airplane as Rotational Symmetry</p>
           </div>
           <div className="animation-panel">
             <AirplaneRotationalSymmetry twoFold={false} />
+          </div>
+        </div>
+      </section>
+
+      {/* Section 8: The Airplane Reflection Symmetry */}
+      <section className="content-section bg-lapis">
+        <div className="content-wrapper layout-split">
+          <div className="text-panel">
+            <h2>4.4 The Airplane Glide Reflection Symmetry</h2>
+            <p>The Airplane as Glide Reflection Symmetry</p>
+          </div>
+          <div className="animation-panel">
+            <AirplaneGlideReflectionalSymmetry />
           </div>
         </div>
       </section>
