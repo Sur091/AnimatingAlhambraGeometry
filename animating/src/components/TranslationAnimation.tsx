@@ -1,28 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { motion, type Variants } from "framer-motion";
-
-// --- Scroll Trigger Hook ---
-function useInView<T extends Element>(
-  ref: React.RefObject<T | null>,
-  options = {},
-) {
-  const [inView, setInView] = useState(false);
-
-  useEffect(() => {
-    if (!ref.current) return;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setInView(true);
-        observer.unobserve(entry.target);
-      }
-    }, options);
-
-    observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [ref, options]);
-
-  return inView;
-}
 
 // --- Mathematical Setup ---
 const R = 50.0;
@@ -130,11 +107,12 @@ const planeVariants: Variants = {
 
 const TranslationAnimation: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const startAnimation = useInView(containerRef, { threshold: 0.3 });
+  const [hasStarted, setHasStarted] = useState(false);
   const [restartKey, setRestartKey] = useState(0);
 
   const handleRestart = () => {
     setRestartKey((prev) => prev + 1);
+    setHasStarted(true);
   };
 
   // The exact SVG path for a single airplane
@@ -167,7 +145,7 @@ const TranslationAnimation: React.FC = () => {
       }}
       title="Click to restart animation"
     >
-      {startAnimation && (
+      {hasStarted ? (
         <svg
           key={restartKey}
           viewBox="-200 -200 400 400"
@@ -198,6 +176,28 @@ const TranslationAnimation: React.FC = () => {
             ))}
           </motion.g>
           <motion.g initial="hide" animate="fadeIn" variants={planeVariants}>
+            {tessellationVectors.map((vector, i) => (
+              <motion.path
+                key={i}
+                d={squarePath(start + (i % 2) * Math.PI)}
+                style={{ x: vector.dx, y: vector.dy }}
+                stroke="#3b82f6"
+                fill="rgba(59, 130, 246, 0.5)"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            ))}
+          </motion.g>
+        </svg>
+      ): (
+        <svg
+          viewBox="-200 -200 400 400"
+          width="100%"
+          height="100%" // THE FIX: Fills the square container perfectly
+          style={{ overflow: "visible" }}
+        >
+          <motion.g>
             {tessellationVectors.map((vector, i) => (
               <motion.path
                 key={i}

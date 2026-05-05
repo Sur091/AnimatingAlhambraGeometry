@@ -3,6 +3,7 @@ import React from "react";
 import TranslationAnimation from "./components/TranslationAnimation";
 import ReflectionAnimation from "./components/ReflectionAnimation";
 import RotationAnimation from "./components/RotationAnimation";
+import GlideReflectionAnimation from "./components/GlideReflectionAnimation";
 
 import Pajarita from "./components/Pajarita";
 import PajaritaTranslationalSymmetry from "./components/PajaritaTranslationalSymmetry";
@@ -220,7 +221,7 @@ const App: React.FC = () => {
             17 different classifications of these tilings.
           </p>
         </div>
-        <div className="grid-container">
+        <div className="grid-container" style={{ width: "55%" }}>
           <div className="image-panel">
             <div className="animation-panel">
               <TranslationAnimation />
@@ -247,7 +248,7 @@ const App: React.FC = () => {
           </div>
           <div className="image-panel">
             <div className="animation-panel">
-              <ReflectionAnimation />
+              <GlideReflectionAnimation />
             </div>
             <div className="caption">
               <p>Image from somewhere</p>
