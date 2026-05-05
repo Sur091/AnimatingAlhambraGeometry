@@ -1,12 +1,17 @@
 import React from "react";
+
 import TranslationAnimation from "./components/TranslationAnimation";
 import ReflectionAnimation from "./components/ReflectionAnimation";
+import RotationAnimation from "./components/RotationAnimation";
+
 import Pajarita from "./components/Pajarita";
 import PajaritaTranslationalSymmetry from "./components/PajaritaTranslationalSymmetry";
 import PajaritaRotationalSymmetry from "./components/PajaritaRotationalSymmetry";
-import AirplaneTranslationalSymmetry from "./components/AirplaneTranslationalSymmetry";
+
 import Bone from "./components/Bone";
+
 import Airplane from "./components/Airplane";
+import AirplaneTranslationalSymmetry from "./components/AirplaneTranslationalSymmetry";
 import AirplaneRotationalSymmetry from "./components/AirplaneRotationalSymmetry";
 import AirplaneReflectionSymmetry from "./components/AirplaneReflectionSymmetry";
 import AirplaneGlideReflectionalSymmetry from "./components/AirplaneGlideReflectionSymmetry";
@@ -234,7 +239,7 @@ const App: React.FC = () => {
           </div>
           <div className="image-panel">
             <div className="animation-panel">
-              <TranslationAnimation />
+              <RotationAnimation />
             </div>
             <div className="caption">
               <p>Image from somewhere</p>

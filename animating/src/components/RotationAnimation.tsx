@@ -26,38 +26,49 @@ function useInView<T extends Element>(
 
 // --- Mathematical Setup ---
 const R = 50.0;
-const D = R * Math.SQRT1_2;
+const H = (3 * R) / 2;
+const D = Math.sqrt(3) * R;
 
 // Hexagonal lattice translation vectors for the Pajarita
 const tessellationVectors = [
-  // { dx: 0, dy: -6 * R },
-  { dx: 0, dy: -4 * D },
-  { dx: 0, dy: 0 },
-  { dx: 0, dy: 4 * D },
+  { dx: -3 * D + 0.5 * D, dy: 0 },
+  { dx: -2 * D + 0.5 * D, dy: 0 },
+  { dx: -D + 0.5 * D, dy: 0 },
+  { dx: 0 + 0.5 * D, dy: 0 },
+  { dx: D + 0.5 * D, dy: 0 },
+  { dx: 2 * D + 0.5 * D, dy: 0 },
 
-  { dx: -2 * D, dy: -2 * D },
-  { dx: -2 * D, dy: -6 * D },
-  { dx: -2 * D, dy: 2 * D },
-  { dx: -2 * D, dy: 6 * D },
+  { dx: -2 * D, dy: -H },
+  { dx: -D, dy: -H },
+  { dx: 0, dy: -H },
+  { dx: D, dy: -H },
+  { dx: 2 * D, dy: -H },
 
-  { dx: 2 * D, dy: -6 * D },
-  { dx: 2 * D, dy: -2 * D },
-  { dx: 2 * D, dy: 2 * D },
-  { dx: 2 * D, dy: 6 * D },
+  { dx: -2 * D, dy: H },
+  { dx: -D, dy: H },
+  { dx: 0, dy: H },
+  { dx: D, dy: H },
+  { dx: 2 * D, dy: H },
 
-  { dx: 4 * D, dy: -4 * D },
-  { dx: 4 * D, dy: 0 },
-  { dx: 4 * D, dy: 4 * D },
+  { dx: -2 * D + 0.5 * D, dy: -2 * H },
+  { dx: -D + 0.5 * D, dy: -2 * H },
+  { dx: 0 + 0.5 * D, dy: -2 * H },
+  { dx: D + 0.5 * D, dy: -2 * H },
+  { dx: 2 * D + 0.5 * D, dy: -2 * H },
 
-  { dx: -4 * D, dy: -4 * D },
-  { dx: -4 * D, dy: 0 },
-  { dx: -4 * D, dy: 4 * D },
+  { dx: 0 + 0.5 * D, dy: 2 * H },
+  { dx: -D + 0.5 * D, dy: 2 * H },
+  { dx: D + 0.5 * D, dy: 2 * H },
+  { dx: 2 * D + 0.5 * D, dy: 2 * H },
+  { dx: -2 * D + 0.5 * D, dy: 2 * H },
 
-  { dx: -6 * D, dy: -2 * D },
-  { dx: -6 * D, dy: 2 * D },
+  { dx: -D, dy: 3 * H },
+  { dx: 0, dy: 3 * H },
+  { dx: D, dy: 3 * H },
 
-  { dx: 6 * D, dy: -2 * D },
-  { dx: 6 * D, dy: 2 * D },
+  { dx: -D, dy: -3 * H },
+  { dx: 0, dy: -3 * H },
+  { dx: D, dy: -3 * H },
 ];
 
 // --- Animation Variants ---
@@ -91,15 +102,15 @@ const tileVariants: Variants = {
   }),
 };
 
-// 3. Translate the entire plane continuously
-const time_before_reflection =
+// 3. Reflect the entire plane continuously
+const timeBeforeReflection =
   tessellationVectors.length * 0.15 + drawDuration + 2;
 const planeVariants: Variants = {
   static: { x: 0, y: 0 },
-  scale: {
-    scaleX: -1,
+  rotate: {
+    rotate: [0, 120],
     transition: {
-      delay: time_before_reflection, // Wait for draw & fill
+      delay: timeBeforeReflection, // Wait for draw & fill
       duration: 3,
       ease: "easeInOut",
     },
@@ -109,12 +120,23 @@ const planeVariants: Variants = {
     transition: {
       duration: 3 + 1,
       times: [0, 0.5 / 4, 3.5 / 4, 1],
-      delay: time_before_reflection - 0.5,
+      delay: timeBeforeReflection - 0.5,
     },
   },
 };
 
-const ReflectionAnimation: React.FC = () => {
+const start = -Math.PI / 2;
+const inc = (2 * Math.PI) / 3;
+const triangle_x = (i: number) => R * Math.cos(start + i * inc);
+const triangle_y = (i: number) => R * Math.sin(start + i * inc);
+const trianglePath = `
+  M ${triangle_x(0)}, ${triangle_y(0)}
+  L ${triangle_x(1)}, ${triangle_y(1)}
+  L ${triangle_x(2)}, ${triangle_y(2)}
+  Z
+  `;
+
+const RotationAnimation: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const startAnimation = useInView(containerRef, { threshold: 0.3 });
   const [restartKey, setRestartKey] = useState(0);
@@ -146,14 +168,18 @@ const ReflectionAnimation: React.FC = () => {
           style={{ overflow: "visible" }}
         >
           {/* The parent group applies the infinite translation to all children */}
-          <motion.g initial="static" animate="scale" variants={planeVariants}>
+          <motion.g
+            initial="static"
+            animate="rotate"
+            variants={planeVariants}
+            style={{ originX: `${50}%`, originY: `${47.5}%` }}
+          >
             {tessellationVectors.map((vector, i) => (
-              <motion.circle
+              <motion.path
                 key={i}
-                cx={vector.dx}
-                cy={vector.dy}
-                r={R}
+                d={trianglePath}
                 custom={i}
+                style={{ x: vector.dx, y: vector.dy }}
                 stroke="#3b82f6"
                 strokeWidth="2"
                 strokeLinecap="round"
@@ -166,11 +192,10 @@ const ReflectionAnimation: React.FC = () => {
           </motion.g>
           <motion.g initial="hide" animate="fadeIn" variants={planeVariants}>
             {tessellationVectors.map((vector, i) => (
-              <circle
+              <motion.path
                 key={i}
-                cx={vector.dx}
-                cy={vector.dy}
-                r={R}
+                d={trianglePath}
+                style={{ x: vector.dx, y: vector.dy }}
                 stroke="#3b82f6"
                 fill="rgba(59, 130, 246, 0.5)"
                 strokeWidth="2"
@@ -179,20 +204,11 @@ const ReflectionAnimation: React.FC = () => {
               />
             ))}
           </motion.g>
-          <motion.path
-            d={`M ${0} -250 L ${0} 250`} // Your SVG Path
-            stroke="#3b82f6"
-            strokeWidth="2"
-            strokeDasharray="10 10" // 4px dash, 4px gap
-            initial="hide"
-            custom={tessellationVectors.length}
-            animate="show"
-            variants={tileVariants}
-          />
+          <circle cx={0} cy={-R / 2} r={3} fill="rgba(59, 130, 246, 0.5)" />
         </svg>
       )}
     </div>
   );
 };
 
-export default ReflectionAnimation;
+export default RotationAnimation;
