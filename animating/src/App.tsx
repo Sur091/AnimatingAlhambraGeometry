@@ -18,6 +18,8 @@ import AirplaneReflectionSymmetry from "./components/AirplaneReflectionSymmetry"
 import AirplaneGlideReflectionalSymmetry from "./components/AirplaneGlideReflectionSymmetry";
 
 import alhambraImage from "./assets/alhambra.jpeg";
+import alhambraExteriorImage from "./assets/alhambraExterior.jpg";
+import comaresPalaceImage from "./assets/comaresPalace.jpg";
 import compassImage from "./assets/compass.jpg";
 import straightEdgeImage from "./assets/straightEdge.jpg";
 
@@ -96,24 +98,64 @@ const App: React.FC = () => {
         >
           <h2 style={{ color: "var(--stucco)" }}>The Alhambra</h2>
           <p style={{ color: "var(--stucco)", fontSize: "1.5rem" }}>
-            Muhammad I ibn al-Ahmar, also known as Alhamar, founded the Nasrid
-            dynasty in 1238 in the south of the present day Spain. During the
-            time of the Nasrid dynasty there was a lot of political instability
-            and turmoil with almost all of the Islamic kingdoms at the time
-            being conquered by Ferdinand III. Sultan Alhamar originally built a
-            fortress on top of a hill which over the course of few centuries
-            expanded into a complex of walls, palaces, and gardens, known as the
-            Alhambra. The artists and artisans used their extensive knowledge of
-            architecture, art, Euclidean geometry in order to build a decorative
-            mosaics and tiles seen in the Alhambra.
+            Muhammad I ibn al-Ahmar(r. 1238-1273), also known as the Alhamar,
+            founded the Nasrid dynasty in 1238 in the south of the present day
+            Spain. During the time of the Nasrid dynasty there was a lot of
+            political instability and turmoil with almost all of the Islamic
+            kingdoms at the time being conquered by Ferdinand III. Sultan
+            Alhamar originally built a fortress on top of a hill which over the
+            course of few centuries expanded into a complex of walls, palaces,
+            and gardens, known as the Alhambra. The artists and artisans used
+            their extensive knowledge of architecture, art, Euclidean geometry
+            in order to build a decorative mosaics and tiles seen in the
+            Alhambra. The fortress of the Alhambra (known as the Alcazaba) was
+            expanded over the years of the Nasrid dynasty to be a palace complex
+            with two prominent palaces: the Comares Palace and the Palace of the
+            Lions. For our research, the tilings we will study come primarily
+            from the Comares Palace or nearby within the Alhambra.
+          </p>
+          <p style={{ color: "var(--stucco)", fontSize: "1.5rem" }}>
+            Construction of the Alhambra began in 1238, under the rule of
+            Muhammad I, however, early construction focused on the Alcazaba (the
+            fortress of the Alhambra) and the exterior walls. It was not until
+            the rule of Ismail I (r. 1314-1325) that construction on the Comares
+            Palace began, with construction continued by his son Yusuf I (r.
+            1333-1354). Although much of the Comares Palace was rebuilt in 1365
+            by Muhammad V. The Comares notably has a large tower known as the
+            tower of the Comares meant to intimidate visitors. In 1310, Yusuf I
+            started construction on the Hall of the Ambassadors inside the tower
+            of the Comares, meant for diplomatic meetings. Outside the entrance
+            to the Hall of the Ambassadors were the beautiful gardens of the
+            Court of the Myrtles (or the Patio de los Arrayanes). Thus any
+            ambassadors would pass through the Court of the Myrtles to get to
+            the Hall of the Ambassadors.
           </p>
         </div>
-        <div>
-          <div className="image-panel">
-            <img src={alhambraImage} alt="Alhambra tiling" />
-            <div className="caption">
-              <p>Image from somewhere</p>
-            </div>
+      </section>
+
+      <section className="content-section bg-lapis">
+        <div className="image-panel">
+          <img src={alhambraExteriorImage} alt="Alhambra exterior" />
+          <div className="caption">
+            <p>
+              Figure 1: The Exterior of the Alhambra, Nasrid, Grenada, Spain,
+              Alcazaba built 11th century, city expanded 13th-14th. Photographed
+              by William Keighley (1889- 1984), Architects: Unknown 11th-14th
+              century architects, Pedro Machuca (Spanish, died 1550), and Juan
+              de Herrera (Spanish, ca. 1530-1597). Alhambra. Alcazaba built 11th
+              century, city expanded 13th-14th centuries, Palace of Charles V
+              built 1533-1631. https://jstor.org/stable/community.12220480.
+            </p>
+          </div>
+        </div>
+        <div className="image-panel">
+          <img src={comaresPalaceImage} alt="Comares Palace" />
+          <div className="caption">
+            <p>
+              Figure 2: The Comares Palace 1333- 1354, Nasrid, Grenada, Spain.
+              Pho- tographed by Dell Upton, Palacio de Comares. 1333-1354;
+              facade ca. 1369. https://jstor.org/stable/community.35819360.
+            </p>
           </div>
         </div>
       </section>
@@ -124,13 +166,26 @@ const App: React.FC = () => {
           <div className="image-panel">
             <img src={compassImage} alt="Compass" width="100%" />
             <div className="caption">
-              <p>Image from somewhere</p>
+              <p>
+                Figure 3: Here you can see an example of a compass tool that
+                would be used to make circles. Photo by W F Stanley and Company
+                Limited. Proportional Compass:- Meeting Point Pattern. 1876.
+                Science Museum Group; W.F. Stanley and Company. Open: Science
+                Museum Group. Artstor.
+                https://jstor.org/stable/community.26404983.
+              </p>
             </div>
           </div>
           <div className="image-panel">
             <img src={straightEdgeImage} alt="Straightedge" width="100%" />
             <div className="caption">
-              <p>Image from somewhere</p>
+              <p>
+                Figure 4: Here you can see an example of a straightedge, a tool
+                used to draw straight lines. Photo by Straight Edge. 18th
+                century. Iron, partly gilded and silvered, Overall: 8 15/16 ×
+                7/8 × 1/8 in. (22.7 × 2.2 × 0.3 cm). The Metropolitan Museum of
+                Art. https://jstor.org/stable/community.18518866.
+              </p>
             </div>
           </div>
         </div>
@@ -276,15 +331,9 @@ const App: React.FC = () => {
       </section>
 
       {/* Section 2: Pajarita Images in the Alhambra */}
-      <section className="content-section bg-lapis">
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-          }}
-        >
-          <div className="text-panel" style={{ width: "45%" }}>
+      <section className="content-section bg-lapis ">
+        <div className="three-layout-split">
+          <div className="text-panel">
             <p style={{ color: "var(--stucco)", fontSize: "1.5rem" }}>
               One example of the Pajarita can be found in the Sala de las Camas
               (or the hall of the beds), as seen in figure{" "}
@@ -306,44 +355,49 @@ const App: React.FC = () => {
               color distinctions of the tiling.
             </p>
           </div>
-          <div className="grid-container" style={{ width: "50vw" }}>
-            {/*Figure 3: image from architects, Pedro Machuca (Spanish, and Juan de Herrera (Spanish,
-          n.d*/}
+          <div className="image-panel">
+            <img src={pajaritaPalaceOfCharlesV} alt="Pajarita" />
+            <div className="caption">
+              <p>
+                Figure 6: Pajaritas in the C´amara Fr´ıa, 13th-14th century,
+                Nasrid, Grenada, Spain. Image by William Keighley (1889-1984).
+                Architects: Unknown 11th-14th century architects, Pedro Machuca
+                (Spanish, died 1550), and Juan de Herrera (Spanish, ca.
+                1530-1597). Alhambra. Alcazaba built 11th century, city expanded
+                13th-14th centuries, Palace of Charles V built 1533-1631.
+                https://jstor.org/stable/community.12215012.
+              </p>
+            </div>
+          </div>
+          <div>
             <div className="image-panel">
               <img src={pajaritaPedroMachuca} alt="Pajarita" />
               <div className="caption">
                 <p>
-                  Figure 3: image from architects, Pedro Machuca (Spanish, and
-                  Juan de Herrera (Spanish, n.d
+                  Figure 5: Pajaritas in the Sala de las Camas in the Comares
+                  Palace. 13th - 14th century, Nas- rid, Grenada, Spain. Image
+                  by William Keighley (1889-1984). Architects: Unknown 11th-
+                  14th century architects, Pedro Machuca (Spanish, died 1550),
+                  and Juan de Herrera (Spanish, ca. 1530-1597). Alhambra.
+                  Alcazaba built 11th century, city expanded 13th-14th
+                  centuries, Palace of Charles V built 1533-1631.
+                  https://jstor.org/stable/community.12217843.
                 </p>
-              </div>
-            </div>
-            {/*Salsa de las Camas*/}
-            <div className="image-panel">
-              <img src={pajaritaSalsaDeLasCamas} alt="Pajarita" />
-              <div className="caption">
-                <p>Figure 6: Salsa de las Camas</p>
               </div>
             </div>
             {/*Figure 4: Detail_of_architects-Alhambra-Alcazaba built 11th century, city expanded 13th-14th centuries, Palace of Charles V built 1533-1631.jpg*/}
-            <div className="image-panel">
-              <img src={pajaritaPalaceOfCharlesV} alt="Pajarita" />
-              <div className="caption">
-                <p>
-                  Figure 4: Detail_of_architects-Alhambra-Alcazaba built 11th
-                  century, city expanded 13th-14th centuries, Palace of Charles
-                  V built 1533-1631.jpg
-                </p>
-              </div>
-            </div>
+
             {/*Figure 5: Side alcoves of the Patio de los Arrayanes in the court of the Myrtles. Image from
           Ortega 2025*/}
             <div className="image-panel">
               <img src={pajaritaArrayanes} alt="Pajarita" />
               <div className="caption">
                 <p>
-                  Figure 5: Side alcoves of the Patio de los Arrayanes in the
-                  court of the Myrtles. Image from Ortega 2025
+                  Figure 7: Pajaritas in the side alcoves of the Patio de los
+                  Arrayanes (the Court of the Myrtles), 13th-14th century,
+                  Nasrid, Grenada, Spain. Image from Miguel Ortega. 2025. “An
+                  introduction to the mathematics in the Alhambra of Granada.”
+                  Eur. Math. Soc. Mag. 135:12–19
                 </p>
               </div>
             </div>
@@ -368,7 +422,16 @@ const App: React.FC = () => {
           <div className="image-panel">
             <img src={pajaritaSalsaDeLasCamas} alt="pajaritaSalsaDeLasCamas" />
             <div className="caption">
-              <p>Figure 7: pajarita black and white</p>
+              <p>
+                Figure 8: Close up of pajaritas in the Sala de las Camas in the
+                Comares Palace. 13th - 14th century, Nasrid, Grenada, Spain.
+                Image by William Keighley (1889- 1984). Architects: Unknown
+                11th-14th century architects, Pedro Machuca (Spanish, died
+                1550), and Juan de Herrera (Spanish, ca. 1530-1597). Alhambra.
+                Alcazaba built 11th century, city expanded 13th-14th centuries,
+                Palace of Charles V built 1533-1631.
+                https://jstor.org/stable/community.12217843.
+              </p>
             </div>
           </div>
           <div className="animation-panel">
@@ -394,9 +457,16 @@ const App: React.FC = () => {
             </p>
           </div>
           <div className="image-panel">
-            <img src={pajaritaSalsaDeLasCamas} alt="pajaritaSalsaDeLasCamas" />
+            <img src={pajaritaBlackAndWhite} alt="pajaritaBlackAndWhite" />
             <div className="caption">
-              <p>Figure 7: pajarita black and white</p>
+              <p>
+                Figure 9: Black and white image of pajaritas in the Alhambra,
+                13th-14th century, Nasrid, Grenada, Spain. Image by B. Lynn
+                Bodner. 2003. “Construction and Classifying Designs of
+                al-Andalus.” In Meeting Alhambra, ISAMA-BRIDGES Conference
+                Proceedings, edited by Javier Barrallo et al., 61–68. Granada,
+                Spain: University of Granada. isbn: 84-930669-1-5
+              </p>
             </div>
           </div>
           <div className="animation-panel">
@@ -406,7 +476,7 @@ const App: React.FC = () => {
       </section>
       {/*{Pajarita Rotatioonal Symmetry, 6-Fold Rotation}*/}
       <section className="content-section bg-stucco">
-        <div className="content-wrapper three-layout-split">
+        <div className="content-wrapper layout-split">
           <div className="text-panel">
             <h2>Classification 3 (p6)</h2>
             <p>
@@ -423,12 +493,6 @@ const App: React.FC = () => {
               translational symmetry as seen in figure previous translational
               symm.
             </p>
-          </div>
-          <div className="image-panel">
-            <img src={pajaritaBlackAndWhite} alt="pajaritaSalsaDeLasCamas" />
-            <div className="caption">
-              <p>Figure 7: pajarita black and white</p>
-            </div>
           </div>
           <div className="animation-panel">
             <PajaritaRotationalSymmetry threeFold={false} />
@@ -515,8 +579,15 @@ const App: React.FC = () => {
                 <img src={airplane1} alt="Airplane" />
                 <div className="caption">
                   <p>
-                    Figure 3: image from architects, Pedro Machuca (Spanish, and
-                    Juan de Herrera (Spanish, n.d
+                    Figure 10: Airplane tiling in the Hall of the Ambassadors,
+                    13th-14th century, Nasrid, Grenada, Spain. Image by Sheila
+                    Blair, Jonathan Bloom and Walter Denny. Founded by Sultan
+                    Muhammad I, and Palace of the Myrtles begun under Sultan
+                    Isma’il I and completed under Muhammad V. Alhambra; Palace
+                    of the Myrtles; Hall of the Ambassadors. founded in 1238,
+                    additions in the 13th and 14th centuries; Palace of the
+                    Myrtles added c. 1370. Tile; opus sectile or tile mosaic.
+                    https://jstor.org/stable/community.15992456.
                   </p>
                 </div>
               </div>
@@ -524,9 +595,14 @@ const App: React.FC = () => {
                 <img src={airplane3} alt="Airplane" />
                 <div className="caption">
                   <p>
-                    Figure 4: Detail_of_architects-Alhambra-Alcazaba built 11th
-                    century, city expanded 13th-14th centuries, Palace of
-                    Charles V built 1533-1631.jpg
+                    Figure 11: Close up of airplane tiles in the Sala de las
+                    Camas in the Comares Palace. 13th - 14th century, Nasrid,
+                    Grenada, Spain. Image by William Keighley (1889- 1984).
+                    Architects: Unknown 11th-14th century architects, Pedro
+                    Machuca (Spanish, died 1550), and Juan de Herrera (Spanish,
+                    ca. 1530-1597). Alhambra. Alcazaba built 11th century, city
+                    expanded 13th-14th centuries, Palace of Charles V built
+                    1533-1631. https://jstor.org/stable/community.12217843.
                   </p>
                 </div>
               </div>
@@ -534,7 +610,12 @@ const App: React.FC = () => {
             <div className="image-panel">
               <img src={airplane2} alt="Airplane" />
               <div className="caption">
-                <p>Figure 6: Salsa de las Camas</p>
+                <p>
+                  Figure 12: Clavos in the Comares Palace, 13th-14th century,
+                  Nasrid, Grenada, Spain. Image by Alhambra Palace - (Nasrid
+                  Palaces). Main construction 14th century. Sites and Photos.
+                  Artstor. https://jstor.org/stable/community.15328675.
+                </p>
               </div>
             </div>
           </div>
@@ -600,6 +681,32 @@ const App: React.FC = () => {
           <div className="animation-panel">
             <AirplaneReflectionSymmetry />
           </div>
+        </div>
+      </section>
+
+      <section className="content-section bg-lapis">
+        <div
+          className="content-wrapper"
+          style={{
+            background: "rgba(26, 54, 93, 0.85)",
+            padding: "4rem",
+            borderRadius: "12px",
+          }}
+        >
+          <h2 style={{ color: "var(--lapis)" }}>Conclusion</h2>
+          <p style={{ color: "var(--lapis)", fontSize: "1.5rem" }}>
+            By studying the mathematical constructions of these tilings within
+            the Alhambra we begin to understand the artisans better. Further, by
+            understanding the mathematics behind these tiling, we can further
+            appreciate the beauty and intricacy of the tile work in the
+            Alhambra. Throughout the Nasrid palaces, geometric tilings are a
+            common theme, understanding the symmetries shows the intricate
+            planning that went into the construction of these beautiful tilings.
+            The simple tools of a compass straight edge can be used to create
+            intricate tilings with over arching symmetry conditions. By
+            exploring symmetries and the role of color, coloring choices are
+            highlighted to have additional structural roles within the tilings.
+          </p>
         </div>
       </section>
     </div>
