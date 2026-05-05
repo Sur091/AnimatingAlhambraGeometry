@@ -17,7 +17,7 @@ import AirplaneRotationalSymmetry from "./components/AirplaneRotationalSymmetry"
 import AirplaneReflectionSymmetry from "./components/AirplaneReflectionSymmetry";
 import AirplaneGlideReflectionalSymmetry from "./components/AirplaneGlideReflectionSymmetry";
 
-import alhambraImage from "./assets/alhambra.jpeg";
+// import alhambraImage from "./assets/alhambra.jpeg";
 import alhambraExteriorImage from "./assets/alhambraExterior.jpg";
 import comaresPalaceImage from "./assets/comaresPalace.jpg";
 import compassImage from "./assets/compass.jpg";
@@ -81,7 +81,9 @@ const App: React.FC = () => {
             which only serves to widen the gap between them. By constructing the
             fundamental pieces of the tile work seen in the Alhambra brought to
             life through animation, we want to depict how math and art are just
-            two sides of the same coin.
+            two sides of the same coin.. We will particularly explore the
+            interactions of color and symmetry in tilings found in the Comares
+            Palace.
           </p>
         </div>
       </section>
@@ -108,27 +110,41 @@ const App: React.FC = () => {
             and gardens, known as the Alhambra. The artists and artisans used
             their extensive knowledge of architecture, art, Euclidean geometry
             in order to build a decorative mosaics and tiles seen in the
-            Alhambra. The fortress of the Alhambra (known as the Alcazaba) was
-            expanded over the years of the Nasrid dynasty to be a palace complex
-            with two prominent palaces: the Comares Palace and the Palace of the
-            Lions. For our research, the tilings we will study come primarily
-            from the Comares Palace or nearby within the Alhambra.
+            Alhambra.<sup>1</sup> The fortress of the Alhambra (known as the
+            Alcazaba) was expanded over the years of the Nasrid dynasty to be a
+            palace complex with two prominent palaces: the Comares Palace and
+            the Palace of the Lions. For our research, the tilings we will study
+            come primarily from the Comares Palace or nearby within the
+            Alhambra.
           </p>
           <p style={{ color: "var(--stucco)", fontSize: "1.5rem" }}>
             Construction of the Alhambra began in 1238, under the rule of
             Muhammad I, however, early construction focused on the Alcazaba (the
-            fortress of the Alhambra) and the exterior walls. It was not until
-            the rule of Ismail I (r. 1314-1325) that construction on the Comares
-            Palace began, with construction continued by his son Yusuf I (r.
-            1333-1354). Although much of the Comares Palace was rebuilt in 1365
-            by Muhammad V. The Comares notably has a large tower known as the
-            tower of the Comares meant to intimidate visitors. In 1310, Yusuf I
-            started construction on the Hall of the Ambassadors inside the tower
-            of the Comares, meant for diplomatic meetings. Outside the entrance
-            to the Hall of the Ambassadors were the beautiful gardens of the
-            Court of the Myrtles (or the Patio de los Arrayanes). Thus any
-            ambassadors would pass through the Court of the Myrtles to get to
-            the Hall of the Ambassadors.
+            fortress of the Alhambra) and the exterior walls.<sup>2</sup> It was
+            not until the rule of Ismail I (r. 1314-1325) that construction on
+            the Comares Palace began, with construction continued by his son
+            Yusuf I (r. 1333-1354). Although much of the Comares Palace was
+            rebuilt in 1365 by Muhammad V.<sup>3</sup> The Comares notably has a
+            large tower known as the tower of the Comares meant to intimidate
+            visitors. In 1310, Yusuf I started construction on the Hall of the
+            Ambassadors inside the tower of the Comares, meant for diplomatic
+            meetings. Outside the entrance to the Hall of the Ambassadors were
+            the beautiful gardens of the Court of the Myrtles (or the Patio de
+            los Arrayanes). Thus any ambassadors would pass through the Court of
+            the Myrtles to get to the Hall of the Ambassadors.<sup>4</sup>
+          </p>
+          <p className="footNotes">
+            <sup>1</sup> Ortega, “An Introduction to the Mathematics in the
+            Alhambra of Granada”
+            <br />
+            <sup>2</sup> Majlan and Alatas, “The Importance of Alhambra as a
+            Fortress and Palaces during the Nasrid Dynasty: The Case of the
+            Alcazaba, the Palace of Comares, and the Palace of the Lions,” 207
+            <br />
+            <sup>3</sup> Majlan and Alatas, 207, 210-211
+            <br />
+            <sup>4</sup> Majlan and Alatas, 212
+            <br />
           </p>
         </div>
       </section>
@@ -202,7 +218,7 @@ const App: React.FC = () => {
             Many of the designs we find in the Alhambra can be created by
             “constructing a framework of identical repeat units, or motifs, that
             recur regularly to form a geometrical grid or a regular division of
-            the plane.”2 By using primarily two tools, a compass and
+            the plane.”<sup>5</sup> By using primarily two tools, a compass and
             straightedge, artisans are able to construct many of these geometric
             tilings. Given two points, a compass allows for the construction of
             a circle through one of those points, centered at the other point. A
@@ -217,6 +233,11 @@ const App: React.FC = () => {
             For each tiling we will break down the construction of the base tile
             used and the over all symmetries of the tiling found in the
             Alhambra.
+          </p>
+          <p className="footNotes">
+            <sup>5</sup> Bodner, “Constructing and Classifying Designs of
+            al-Andalus,” 61
+            <br />
           </p>
         </div>
       </section>
@@ -239,9 +260,9 @@ const App: React.FC = () => {
               motion of an object along a line the given direction for a given
               distance, in such a way that what is horizontal remains
               horizontal, and what is vertical throughout the motion (i.e.,
-              there are no turns).” For translational symmetry, we can think
-              about moving the entire tiling in a specific direction in such a
-              way that each tile is moved onto an identical tile.
+              there are no turns)."<sup>6</sup> For translational symmetry, we
+              can think about moving the entire tiling in a specific direction
+              in such a way that each tile is moved onto an identical tile.
             </p>
             <p style={{ color: "var(--stucco)", fontSize: "1.5rem" }}>
               A <strong>reflection</strong> is found by flipping the entire tile
@@ -257,6 +278,11 @@ const App: React.FC = () => {
               Finally, a <strong>glide reflection</strong> is the combination of
               a reflection followed by a translation in a direction parallel to
               the axis of reflection.
+            </p>
+            <p className="footNotes">
+              <sup>6</sup> Lovric, “Magic Geometry: Mosaics in the Alhambra,”
+              425
+              <br />
             </p>
           </div>
           <div className="grid-container">
@@ -316,7 +342,8 @@ const App: React.FC = () => {
             <p style={{ color: "var(--stucco)", fontSize: "1.5rem" }}>
               The pajarita tile is also known as the Nasrid bowtie or the Nasrid
               birdie. The tile's name of birdie comes from the way the tile
-              resembles a bird with a head and two outstretched wings.4
+              resembles a bird with a head and two outstretched wings.
+              <sup>7</sup>
               Pajaritas can be found in multiple forms throughout the Alhambra
               including in the Court of the Myrtles and the Comares Palace as
               seen below. In fact, often times the pajarita is seen as the
@@ -324,7 +351,13 @@ const App: React.FC = () => {
               different curves, each of these curves is just a segment of a
               circle. By creating a grid of interlacing circles as seen in the
               animation, the pajarita can then be found by tracing along these
-              circles.
+              circles.<sup>8</sup>
+            </p>
+            <p className="footNotes">
+              <sup>7</sup> Tyminski, “Looking at Mosaics in the Alhambra”
+              <br />
+              <sup>8</sup> Ortega, “An Introduction to the Mathematics in the
+              Alhambra of Granada”
             </p>
           </div>
         </div>
@@ -336,23 +369,31 @@ const App: React.FC = () => {
           <div className="text-panel">
             <p style={{ color: "var(--stucco)", fontSize: "1.5rem" }}>
               One example of the Pajarita can be found in the Sala de las Camas
-              (or the hall of the beds), as seen in figure{" "}
-              <strong>1st image</strong>
-              which can be found in the Ba˜no de Comares in the Comares Palace.
-              However, this is not the only example. Pajaritas can also be found
-              in the C´amara Fr´ıa or the Cold Chamber, as seen in figure{" "}
-              <strong>2nd image</strong> which is also in the Ba˜no de Comares
-              in the Comares Palace. Another variation of the pajarita can be
-              seen in the side alcoves of the Patio de los Arrayanes in the
-              court of the Myrtles, as found in figure{" "}
-              <strong>3rd image</strong>. In this example, the middles of every
-              pajarita is filled either by a hexagon or a 6 pointed star. We
-              will primary break down the symmetry of the tiling in the Sala de
-              las Camas, however, it is clear the pajarita is a common symbol
-              throughout the Alhambra. When classifying the symmetries of the
-              tiling in the Sala de las Camas, there are three ways to proceed
-              as seen below depending on how much the symmetries respect the
-              color distinctions of the tiling.
+              (or the hall of the beds), as seen in figure 5 which can be found
+              in the Ba˜no de Comares in the Comares Palace. However, this is
+              not the only example. Pajaritas can also be found in the C´amara
+              Fr´ıa or the Cold Chamber, as seen in figure 6 which is also in
+              the Ba˜no de Comares in the Comares Palace.<sup>9</sup> In this
+              example, we see that the tiling is chromatically chaotic,
+              Gr¨unbaum argues that "the artists destroyed the symmetries to
+              make the tilings less monotonous."<sup>10</sup> Another variation
+              of the pajarita can be seen in the side alcoves of the Patio de
+              los Arrayanes in the court of the Myrtles, as found in figure 7.
+              In this example, the middles of every pajarita is filled either by
+              a hexagon or a 6 pointed star. We will primary break down the
+              symmetry of the tiling in the Sala de las Camas, however, it is
+              clear the pajarita is a common symbol throughout the Alhambra.
+              When classifying the symmetries of the tiling in the Sala de las
+              Camas, there are three ways to proceed as seen below depending on
+              how much the symmetries respect the color distinctions of the
+              tiling.
+            </p>
+            <p className="footNotes">
+              <sup>9</sup> Empar´an, “The Planar Crystallography Groups as an
+              Iconographic Analysis Tool in Islamic Art”, 306 -307
+              <br />
+              <sup>10</sup> Gr¨unbaum, “What Symmetry Groups Are Present in the
+              Alhambra?” 673
             </p>
           </div>
           <div className="image-panel">
@@ -447,13 +488,19 @@ const App: React.FC = () => {
             <h2>Classification 2 (p2)</h2>
             <p style={{ color: "var(--lapis)", fontSize: "1.5rem" }}>
               In this case we are only partially respecting the color
-              distinction, where we distinguish between white tiles and non
-              white tiles. Let us treat every non white tile as the same color,
-              almost like we are taking the image in black in white as seen in
-              figure figure. When we do this we find that this tiling can be
-              classified as p3.7 8 Which has translational symmetry (as seen in
-              figure figure from classification 1) and 3 fold rotational
-              symmetry as seen in figure animation)
+              distinction, where distinguish between white tiles and non white
+              tiles. Let us treat every non white tile as the same color, almost
+              like we are taking the image in black in white as seen in figure
+              9. When we do this we find that this tiling can be classified as
+              p3.<sup>11</sup> <sup>12</sup> Which has translational symmetry
+              (as seen in the animation above) and 3 fold rotational symmetry as
+              seen in the animation to the right).
+            </p>
+            <p className="footNotes">
+              <sup>11</sup> Bodner, “Constructing and Classifying Designs of
+              al-Andalus,” 67 <br />
+              <sup>12</sup> Gr¨unbaum, “What Symmetry Groups Are Present in the
+              Alhambra?” 671
             </p>
           </div>
           <div className="image-panel">
@@ -481,17 +528,24 @@ const App: React.FC = () => {
             <h2>Classification 3 (p6)</h2>
             <p>
               In the third classification of the pajaritas tiling in the Sala de
-              las Camas, we don't respect the color distinctions, so we do not
+              las Camas, we don’t respect the color distinctions, so we do not
               distinguish between different colored tiles. When we do so, this
               tiling is a part of a classification called p6. This group is
               notable for only having 6 fold rotational symmetry (in addition to
-              the translational symmetry of any crystallographic group).9 10 We
-              can see this rotational symmetry in figure animation. Specifically
-              in this case, we have 6 fold rotational symmetry where we can
-              rotate 6 times about any meeting of the point of 6 Pajaritas tiles
-              before returning the original configuration. This tiling also has
-              translational symmetry as seen in figure previous translational
-              symm.
+              the translational symmetry of any crystallographic group).
+              <sup>13</sup> <sup>14</sup>We can see this rotational symmetry in
+              the animation to the right. Specifically in this case, we have 6
+              fold rotational symmetry where we can rotate 6 times about any
+              meeting of the point of 6 Pajaritas tiles before returning the
+              original configuration. This tiling also has translational
+              symmetry as seen in the first classification.
+            </p>
+            <p className="footNotes" style={{ color: "black" }}>
+              <sup>13</sup> Bodner, “Constructing and Classifying Designs of
+              al-Andalus,” 67 <br />
+              <sup>14</sup> Gr¨unbaum, “What Symmetry Groups Are Present in the
+              Alhambra?” 671
+              <br />
             </p>
           </div>
           <div className="animation-panel">
@@ -520,14 +574,23 @@ const App: React.FC = () => {
             <h2>4.1 The Airplane</h2>
             <p style={{ color: "var(--lapis)", fontSize: "1.5rem" }}>
               Like the pajarita, the airplane tile can also be found throughout
-              the Alhambra.11 The airplane can be constructed by first
-              constructing a regular octagon, then connecting diagonal vertices
-              and extending the edge of the octagon. The airplane can then be
-              found by tracing along these lines as seen in figure animation.12
-              A variation of the airplane often called the clavo or nail tile13
-              (see figure example below) is also popular in the Alhambra. To
-              turn the airplane into a clavo, the straightedges of the airplane
-              are replaces with curved edges.
+              the Alhambra.<sup>15</sup> The airplane can be constructed by
+              first constructing a regular octagon, then connecting diagonal
+              vertices and extending the edge of the octagon. The airplane can
+              then be found by tracing along these lines as seen in the
+              animation to the right.<sup>16</sup> A variation of the airplane
+              often called the clavo or nail tile<sup>17</sup> (see figure 12
+              below) is also popular in the Alhambra. To turn the airplane into
+              a clavo, the straightedges of the airplane are replaces with
+              curved edges.
+            </p>
+            <p className="footNotes">
+              <sup>15</sup> Lovric, “Magic Geometry: Mosaics in the Alhambra,”
+              426 <br />
+              <sup>16</sup> Ortega, “An Introduction to the Mathematics in the
+              Alhambra of Granada” <br />
+              <sup>17</sup> Empar´an, “The Planar Crystallography Groups as an
+              Iconographic Analysis Tool in Islamic Art,” 306 <br />
             </p>
           </div>
           <div className="animation-panel">
@@ -547,15 +610,23 @@ const App: React.FC = () => {
         >
           <div className="text-panel" style={{ width: "45%" }}>
             <p style={{ color: "var(--lapis)", fontSize: "1.5rem" }}>
-              A tiling using black and white airplanes can be found in the
-              Chamber of Ambassadors, in the Court of the Myrtles (as seen in
-              figure 1st image). While this is the tiling we will explore the
+              A tiling using black and white airplanes can be found in the Hall
+              of the Ambassadors, in the Comares Palace (as seen in figure 10).
+              <sup>18</sup> While this is the tiling we will explore the
               symmetries of, this is not the only example of airplanes in the
               Alhambra. Just below the pajaritas we studied in the Sala de las
-              Camas (see figure ref earlier image and figure 2nd image) is a
-              yellow, green, black, and white airplane tiling. A clavos tiling
-              (a variation of the airplane), as seen in figure 3rd image is
-              found in the Portico del Cuarto Dorado in the Comares Palace
+              Camas (see figure 5 and figure 11) is a yellow, green, black, and
+              white airplane tiling. A clavos tiling (a variation of the
+              airplane), as seen in figure 12 is found in the Portico del Cuarto
+              Dorado in the Comares Palace.<sup>19</sup> Taking the black and
+              white airplanes tiling in the Hall of the Ambassadors, we find
+              there are two ways to classify its symmetries.
+            </p>
+            <p className="footNotes" style={{ color: "black" }}>
+              <sup>18</sup> Ortega, “An Introduction to the Mathematics in the
+              Alhambra of Granada” <br />
+              <sup>19</sup> Empar´an, “The Planar Crystallography Groups as an
+              Iconographic Analysis Tool in Islamic Art,” 306
             </p>
           </div>
           <div
@@ -626,25 +697,42 @@ const App: React.FC = () => {
       <section className="content-section bg-lapis">
         <div className="text-panel" style={{ width: "40%" }}>
           <h2>Classification 1 (cmm)</h2>
-          <p style={{ color: "var(--lapis)", fontSize: "1.5rem" }}>
-            n this approach, we maintain the color distinctions between the
-            black and white airplanes. Looking at figure 1st airplanes example
-            can immediately notice multiple translation sym- metries of the
-            mosaic. There are translations from moving the tiling left and
-            right, or from moving it up and down. Additionally, there is a
-            diagonal symmetry as seen in figure animation.
+          <p style={{ color: "var(--lapis)", fontSize: "1.4rem" }}>
+            In this approach, we maintain the color distinctions between the
+            black and white airplanes in the tiling in the Hall of Ambassadors.
+            Looking at figure 10, we can immediately notice multiple translation
+            symmetries of the mosaic. There are translations from moving the
+            tiling left and right, or from moving it up and down. Additionally,
+            there is a diagonal symmetry as seen in the animation to the right.
+            <sup>20</sup>
           </p>
-          <p style={{ color: "var(--lapis)", fontSize: "1.5rem" }}>
+          <p style={{ color: "var(--lapis)", fontSize: "1.4rem" }}>
             In addition to the translational symmetry, we get reflections
-            through the middle of our vertical airplanes as seen in figure
-            reflection animation. We similarly get horizontal re- flections
-            through the middle of the horizontal airplanes.
+            through the middle of our vertical airplanes as seen in the
+            animation to the right. We similarly get horizontal reflections
+            through the middle of the horizontal airplanes.<sup>21</sup>
           </p>
-          <p style={{ color: "var(--lapis)", fontSize: "1.5rem" }}>
-            In addition to the translational symmetry, we get reflections
-            through the middle of our vertical airplanes as seen in figure
-            reflection animation. We similarly get horizontal re- flections
-            through the middle of the horizontal airplanes.
+          <p style={{ color: "var(--lapis)", fontSize: "1.4rem" }}>
+            We can see that by translating our tile up and then reflecting over
+            a line placed between the vertical black airplanes, that we have
+            symmetry. Thus, vertical glide reflections can be found between the
+            black airplanes as seen in the animation to the right.<sup>22</sup>
+          </p>
+          <p style={{ color: "var(--lapis)", fontSize: "1.4rem" }}>
+            Looking at a point where four airplanes meet we, can rotate 180◦ to
+            rotate every black airplane to a black airplane and every white
+            airplane to a white airplane.
+          </p>
+          <p style={{ color: "var(--lapis)", fontSize: "1.4rem" }}>
+            Mathematically this group of symmetries is known as cmm which
+            notably only has 2 fold rotational symmetry.<sup>23</sup>
+          </p>
+          <p className="footNotes">
+            <sup>20</sup> Lovric, “Magic Geometry: Mosaics in the Alhambra,”
+            426-427 <br />
+            <sup>21</sup> Lovric, 426-427 <br />
+            <sup>22</sup> Lovric, 426-427 <br />
+            <sup>23</sup> Lovric, 426-427 <br />
           </p>
         </div>
         <div className="grid-container">
@@ -664,18 +752,26 @@ const App: React.FC = () => {
       <section className="content-section bg-stucco">
         <div className="content-wrapper layout-split">
           <div className="text-panel">
-            <h2>Classification 2</h2>
+            <h2>Classification 2 (pg4)</h2>
             <p style={{ color: "var(--lapis)", fontSize: "1.5rem" }}>
               In our second approach to classification, we ignore the color
               distinctions between the black and white airplanes in the Hall of
               the Ambassadors. In doing so, we find that the center of rotation
-              as seen in figure airplane 2 fold rotation now has a 90◦ rotation
-              giving it 4 fold rotational symmetry as seen in figure airplane 4
-              fold rotation.23 In addition to the 4 fold rotational symmetry,
-              this tile inherits all the symmetries from our first
-              classification of translations, reflections, and glide
+              (as seen in the animation above from the first classification) now
+              has a 90◦ rotation giving it 4 fold rotational symmetry as seen in
+              the animation to the right.<sup>24</sup> In addition to the 4 fold
+              rotational symmetry, this tile inherits all the symmetries from
+              our first classification of translations, reflections, and glide
               reflections. With the new 4 fold rotational symmetry, the tiling
               in the Hall of the Ambassadors is considered a p4g tiling.
+              <sup>25</sup> <sup>26</sup>
+            </p>
+            <p className="footNotes" style={{ color: "black" }}>
+              <sup>24</sup> Lovric, "Magic Geometry: Mosaics in the Alhambra,"
+              426-427 <br />
+              <sup>25</sup> Bodner, “Constructing and Classifying Designs of
+              al-Andalus,” 65 <br />
+              <sup>26</sup> Lovric, 426
             </p>
           </div>
           <div className="animation-panel">
@@ -706,6 +802,67 @@ const App: React.FC = () => {
             intricate tilings with over arching symmetry conditions. By
             exploring symmetries and the role of color, coloring choices are
             highlighted to have additional structural roles within the tilings.
+          </p>
+        </div>
+      </section>
+
+      {/* References */}
+      <section className="content-section bg-lapis">
+        <div
+          className="content-wrapper"
+          style={{
+            background: "rgba(26, 54, 93, 0.85)",
+            padding: "4rem",
+            borderRadius: "12px",
+          }}
+        >
+          <h2 style={{ color: "var(--lapis)" }}>References</h2>
+          <p className="references">
+            Bodner, B. Lynn. 2003. “Construction and Classifying Designs of
+            al-Andalus.” In Meet- ing Alhambra, ISAMA-BRIDGES Conference
+            Proceedings, edited by Javier Barrallo, Nathaniel Friedman, Juan
+            Antonio Maldonado, Jos´e Mart´ınez-Aroza, Reza Sarhangi, and Carlo
+            S´equin, 61–68. Granada, Spain: University of Granada. isbn:
+            84-930669-1-5.
+          </p>
+          <p className="references">
+            Empar´an, Mar´ıa Antonieta. 2019. “The Planar Crystallography Groups
+            as an Iconographic Analysis Tool in Islamic Art.” In Proceedings of
+            Bridges 2019: Mathematics, Art, Mu- sic, Architecture, Education,
+            Culture, edited by Susan Goldstine, Douglas McKenna, and Krist´of
+            Fenyvesi, 303–310. Phoenix, Arizona: Tessellations Publishing. isbn:
+            978-1- 938664-27-4.
+          </p>
+          <p className="references">
+            Gr¨unbaum, Branko. 2006. “What Symmetry Groups are Present in the
+            Alhambra.” Notices of the AMS 53 (6): 670–673.
+          </p>
+          <p className="references">
+            Lovric, Miroslav. 2009. “Magic geometry: mosaics in the Alhambra.”
+          </p>
+          <p className="references">
+            Majlan, Nurul Shahirah binti, and Alwi Alatas. 2022. “The Importance
+            of Alhambra as a Fortress and Palaces during the Nasrid Dynasty: The
+            Case of the Alcazaba, the Palace of Comares, and the Palace of the
+            Lions.” IIUM Journal of Religion and Civilisational Studies 5, no. 2
+            (December): 202–219. https://doi.org/10.31436/ijrcs.v5i2.254. https:
+            //journals.iium.edu.my/irkh/index.php/ijrcs/article/view/254.
+          </p>
+          <p className="references">
+            Ortega, Miguel. 2025. “An introduction to the mathematics in the
+            Alhambra of Granada.” Eur. Math. Soc. Mag. 135:12–19.
+          </p>
+          <p className="references">
+            P´erez-G´omez, Rafael. 1987. “The four regular mosaics missing in
+            the Alhambra.” Computers & Mathematics with Applications 14 (2):
+            133–137.
+          </p>
+          <p className="references">
+            Tyminski, Robert. 2025. “Looking at Mosaics in the Alhambra.” Jung
+            Journal 19 (1): 34–48.
+            https://doi.org/10.1080/19342039.2025.2446127. eprint:
+            https://doi.org/10.1080/ 19342039.2025.2446127.
+            https://doi.org/10.1080/19342039.2025.2446127.
           </p>
         </div>
       </section>
