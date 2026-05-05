@@ -1,5 +1,6 @@
 import React from "react";
 import TranslationAnimation from "./components/TranslationAnimation";
+import ReflectionAnimation from "./components/ReflectionAnimation";
 import Pajarita from "./components/Pajarita";
 import PajaritaTranslationalSymmetry from "./components/PajaritaTranslationalSymmetry";
 import PajaritaRotationalSymmetry from "./components/PajaritaRotationalSymmetry";
@@ -225,7 +226,7 @@ const App: React.FC = () => {
           </div>
           <div className="image-panel">
             <div className="animation-panel">
-              <TranslationAnimation />
+              <ReflectionAnimation />
             </div>
             <div className="caption">
               <p>Image from somewhere</p>
@@ -241,7 +242,7 @@ const App: React.FC = () => {
           </div>
           <div className="image-panel">
             <div className="animation-panel">
-              <TranslationAnimation />
+              <ReflectionAnimation />
             </div>
             <div className="caption">
               <p>Image from somewhere</p>
