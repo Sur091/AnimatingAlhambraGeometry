@@ -1,159 +1,228 @@
 .app-container {
-  width: 100%;
+    width: 100%;
 }
 
 /* Replaced scroll-snap with standard sections */
 .content-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
-  position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
 }
 
 .topic-section {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
-  position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
 }
-.styleOne{
-  background-color:#16a085;
-  background-image:
-  linear-gradient(67.5deg, #16a085 10%, transparent 10%),
-  linear-gradient(157.5deg, #16a085 10%, transparent 10%),
-  linear-gradient(67.5deg, transparent 90%, #16a085 90%),
-  linear-gradient(157.5deg, transparent 90%, #16a085 90%),
-    
-  linear-gradient(22.5deg, #16a085 10%, transparent 10%),
-  linear-gradient(112.5deg, #16a085 10%, transparent 10%),
-  linear-gradient(22.5deg, transparent 90%, #16a085 90%),
-  linear-gradient(112.5deg, transparent 90%, #16a085 90%),
-  
-  linear-gradient(22.5deg, transparent 33%, #d5d8dc 33%, #d5d8dc 36%, transparent 36%, transparent 64%, #d5d8dc 64%, #d5d8dc 67%, transparent 67%),
-  linear-gradient(-22.5deg, transparent 33%, #d5d8dc 33%, #d5d8dc 36%, transparent 36%, transparent 64%, #d5d8dc 64%, #d5d8dc 67%, transparent 67%),
-  linear-gradient(112.5deg, transparent 33%, #d5d8dc 33%, #d5d8dc 36%, transparent 36%, transparent 64%, #d5d8dc 64%, #d5d8dc 67%, transparent 67%),
-  linear-gradient(-112.5deg, transparent 33%, #d5d8dc 33%, #d5d8dc 36%, transparent 36%, transparent 64%, #d5d8dc 64%, #d5d8dc 67%, transparent 67%);
-  /*guidelines*/
-/*   linear-gradient(transparent 49%, black 50%, transparent 51%), 
+.styleOne {
+    background-color: #16a085;
+    background-image:
+        linear-gradient(67.5deg, #16a085 10%, transparent 10%),
+        linear-gradient(157.5deg, #16a085 10%, transparent 10%),
+        linear-gradient(67.5deg, transparent 90%, #16a085 90%),
+        linear-gradient(157.5deg, transparent 90%, #16a085 90%),
+        linear-gradient(22.5deg, #16a085 10%, transparent 10%),
+        linear-gradient(112.5deg, #16a085 10%, transparent 10%),
+        linear-gradient(22.5deg, transparent 90%, #16a085 90%),
+        linear-gradient(112.5deg, transparent 90%, #16a085 90%),
+        linear-gradient(
+            22.5deg,
+            transparent 33%,
+            #d5d8dc 33%,
+            #d5d8dc 36%,
+            transparent 36%,
+            transparent 64%,
+            #d5d8dc 64%,
+            #d5d8dc 67%,
+            transparent 67%
+        ),
+        linear-gradient(
+            -22.5deg,
+            transparent 33%,
+            #d5d8dc 33%,
+            #d5d8dc 36%,
+            transparent 36%,
+            transparent 64%,
+            #d5d8dc 64%,
+            #d5d8dc 67%,
+            transparent 67%
+        ),
+        linear-gradient(
+            112.5deg,
+            transparent 33%,
+            #d5d8dc 33%,
+            #d5d8dc 36%,
+            transparent 36%,
+            transparent 64%,
+            #d5d8dc 64%,
+            #d5d8dc 67%,
+            transparent 67%
+        ),
+        linear-gradient(
+            -112.5deg,
+            transparent 33%,
+            #d5d8dc 33%,
+            #d5d8dc 36%,
+            transparent 36%,
+            transparent 64%,
+            #d5d8dc 64%,
+            #d5d8dc 67%,
+            transparent 67%
+        );
+    /*guidelines*/
+    /*   linear-gradient(transparent 49%, black 50%, transparent 51%),
   linear-gradient(90deg, transparent 49%, black 50%, transparent 51%),
   linear-gradient(45deg, transparent 49%, black 50%, transparent 51%),
   linear-gradient(-45deg, transparent 49%, black 50%, transparent 51%),
   radial-gradient(transparent 69%, black 70%, transparent 71%),
   linear-gradient(45deg, pink, teal); */
-  background-size: 250px 250px;
-  background-position: 
-    -100px 150px, -150px 150px, -150px 100px, -100px 100px,
-    -150px 100px, -100px 100px, -100px 150px, -150px 150px,
-    0 0, 0 0, 0 0, 0 0;
+    background-size: 250px 250px;
+    background-position:
+        -100px 150px,
+        -150px 150px,
+        -150px 100px,
+        -100px 100px,
+        -150px 100px,
+        -100px 100px,
+        -100px 150px,
+        -150px 150px,
+        0 0,
+        0 0,
+        0 0,
+        0 0;
 }
 
 /* Constrain the inner content so it's readable on huge screens */
 .content-wrapper {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  z-index: 2;
+    /*max-width: 1200px;*/
+    width: 100%;
+    margin: 0 auto;
+    z-index: 2;
 }
 
 /* Responsive Split Layout */
 .layout-split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+.three-layout-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
 }
 
 @media (max-width: 900px) {
-  .layout-split {
-    grid-template-columns: 1fr;
-  }
+    .layout-split {
+        grid-template-columns: 1fr;
+    }
 }
 
 .text-panel {
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  border-left: 4px solid var(--terracotta);
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid var(--terracotta);
 }
 
 .image-panel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
 }
 .grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  grid-template-rows: repeat(2, 1fr);    
-  gap: 50px 60px;                             
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(200px, 1fr), minmax(200px, 1fr);
+    gap: 3rem 4rem;
 }
-
 
 /* --- Theming Classes --- */
 .bg-lapis {
-  background-color: var(--lapis-blue);
-  color: var(--text-light);
+    background-color: var(--lapis-blue);
+    color: var(--text-light);
 }
 
 .bg-lapis .text-panel {
-  background: rgba(26, 54, 93, 0.8);
-  color: var(--text-light);
-  border-left: 4px solid var(--gold);
+    background: rgba(26, 54, 93, 0.8);
+    color: var(--text-light);
+    border-left: 4px solid var(--gold);
 }
 
 .bg-lapis h2 {
-  color: var(--gold);
-  border-bottom-color: var(--terracotta);
+    color: var(--gold);
+    border-bottom-color: var(--terracotta);
 }
 
 .bg-stucco {
-  background-color: var(--stucco);
-  color: var(--text-dark);
+    background-color: var(--stucco);
+    color: var(--text-dark);
 }
 
 /* Pure CSS Geometric Background Pattern for the Hero */
 /* Update your hero-pattern class */
 .hero-pattern {
-  background-color: var(--lapis-blue);
-  /* ... keep your existing complex background-image gradients here ... */
-  background-size: 100px 50px;
-  text-align: center;
-  
-  /* ADD THESE TWO LINES FOR PARALLAX */
-  background-attachment: fixed; 
-  background-position: center;
+    background-color: var(--lapis-blue);
+    /* ... keep your existing complex background-image gradients here ... */
+    background-size: 100px 50px;
+    text-align: center;
+
+    /* ADD THESE TWO LINES FOR PARALLAX */
+    background-attachment: fixed;
+    background-position: center;
 }
 
 /* Update your animation-panel class */
 .animation-panel {
-  background: white;
-  padding: 0.1rem;
-  border-radius: 50%; 
-  box-shadow: inset 0 0 50px rgba(0,0,0,0.05), 0 20px 40px rgba(26, 54, 93, 0.1);
-  aspect-ratio: 1 / 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  
-  /* ADD THESE LINES FOR HOVER/CLICK FEEDBACK */
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 700px;
+    background: white;
+    padding: 0.1rem;
+    border-radius: 50%;
+    box-shadow:
+        inset 0 0 50px rgba(0, 0, 0, 0.05),
+        0 20px 40px rgba(26, 54, 93, 0.1);
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    /* ADD THESE LINES FOR HOVER/CLICK FEEDBACK */
+    cursor: pointer;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .animation-panel:hover {
-  transform: scale(1.03);
-  box-shadow: inset 0 0 30px rgba(0,0,0,0.05), 0 30px 60px rgba(26, 54, 93, 0.2);
+    transform: scale(1.03);
+    box-shadow:
+        inset 0 0 30px rgba(0, 0, 0, 0.05),
+        0 30px 60px rgba(26, 54, 93, 0.2);
 }
 
 .animation-panel:active {
-  transform: scale(0.98); /* Satisfying 'click' push-in effect */
+    transform: scale(0.98); /* Satisfying 'click' push-in effect */
+}
+
+img {
+    max-width: 100%;
+}
+
+.multiple-images {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: 130%;
 }
