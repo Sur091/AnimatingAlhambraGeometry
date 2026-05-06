@@ -169,8 +169,8 @@ const App: React.FC = () => {
           <div className="caption">
             <p>
               Figure 2: The Comares Palace 1333- 1354, Nasrid, Grenada, Spain.
-              Pho- tographed by Dell Upton, Palacio de Comares. 1333-1354;
-              facade ca. 1369. https://jstor.org/stable/community.35819360.
+              Photographed by Dell Upton, Palacio de Comares. 1333-1354; facade
+              ca. 1369. https://jstor.org/stable/community.35819360.
             </p>
           </div>
         </div>
@@ -259,10 +259,11 @@ const App: React.FC = () => {
               <strong>translation</strong> as follows: "translation is the
               motion of an object along a line the given direction for a given
               distance, in such a way that what is horizontal remains
-              horizontal, and what is vertical throughout the motion (i.e.,
-              there are no turns)."<sup>6</sup> For translational symmetry, we
-              can think about moving the entire tiling in a specific direction
-              in such a way that each tile is moved onto an identical tile.
+              horizontal, and what is vertical remains vertical throughout the
+              motion (i.e., there are no turns)."<sup>6</sup> For translational
+              symmetry, we can think about moving the entire tiling in a
+              specific direction in such a way that each tile is moved onto an
+              identical tile.
             </p>
             <p style={{ color: "var(--stucco)", fontSize: "1.5rem" }}>
               A <strong>reflection</strong> is found by flipping the entire tile
@@ -370,23 +371,22 @@ const App: React.FC = () => {
             <p style={{ color: "var(--stucco)", fontSize: "1.5rem" }}>
               One example of the Pajarita can be found in the Sala de las Camas
               (or the hall of the beds), as seen in figure 5 which can be found
-              in the Ba˜no de Comares in the Comares Palace. However, this is
-              not the only example. Pajaritas can also be found in the Cámara
-              Fría or the Cold Chamber, as seen in figure 6 which is also in the
-              Ba˜no de Comares in the Comares Palace.<sup>9</sup> In this
-              example, we see that the tiling is chromatically chaotic, Grünbaum
-              argues that "the artists destroyed the symmetries to make the
-              tilings less monotonous."<sup>10</sup> Another variation of the
-              pajarita can be seen in the side alcoves of the Patio de los
-              Arrayanes in the court of the Myrtles, as found in figure 7. In
-              this example, the middles of every pajarita is filled either by a
-              hexagon or a 6 pointed star. We will primary break down the
-              symmetry of the tiling in the Sala de las Camas, however, it is
-              clear the pajarita is a common symbol throughout the Alhambra.
-              When classifying the symmetries of the tiling in the Sala de las
-              Camas, there are three ways to proceed as seen below depending on
-              how much the symmetries respect the color distinctions of the
-              tiling.
+              in the Baño de Comares in the Comares Palace. However, this is not
+              the only example. Pajaritas can also be found in the Cámara Fría
+              or the Cold Chamber, as seen in figure 6 which is also in the Baño
+              de Comares in the Comares Palace.<sup>9</sup> In this example, we
+              see that the tiling is chromatically chaotic, Grünbaum argues that
+              "the artists destroyed the symmetries to make the tilings less
+              monotonous."<sup>10</sup> Another variation of the pajarita can be
+              seen in the side alcoves of the Patio de los Arrayanes in the
+              court of the Myrtles, as found in figure 7. In this example, the
+              middles of every pajarita is filled either by a hexagon or a 6
+              pointed star. We will primary break down the symmetry of the
+              tiling in the Sala de las Camas, however, it is clear the pajarita
+              is a common symbol throughout the Alhambra. When classifying the
+              symmetries of the tiling in the Sala de las Camas, there are three
+              ways to proceed as seen below depending on how much the symmetries
+              respect the color distinctions of the tiling.
             </p>
             <p className="footNotes">
               <sup>9</sup> Emparán, “The Planar Crystallography Groups as an
@@ -416,12 +416,12 @@ const App: React.FC = () => {
               <div className="caption">
                 <p>
                   Figure 5: Pajaritas in the Sala de las Camas in the Comares
-                  Palace. 13th - 14th century, Nas- rid, Grenada, Spain. Image
-                  by William Keighley (1889-1984). Architects: Unknown 11th-
-                  14th century architects, Pedro Machuca (Spanish, died 1550),
-                  and Juan de Herrera (Spanish, ca. 1530-1597). Alhambra.
-                  Alcazaba built 11th century, city expanded 13th-14th
-                  centuries, Palace of Charles V built 1533-1631.
+                  Palace. 13th - 14th century, Nasrid, Grenada, Spain. Image by
+                  William Keighley (1889-1984). Architects: Unknown 11th- 14th
+                  century architects, Pedro Machuca (Spanish, died 1550), and
+                  Juan de Herrera (Spanish, ca. 1530-1597). Alhambra. Alcazaba
+                  built 11th century, city expanded 13th-14th centuries, Palace
+                  of Charles V built 1533-1631.
                   https://jstor.org/stable/community.12217843.
                 </p>
               </div>
@@ -526,17 +526,17 @@ const App: React.FC = () => {
         <div className="content-wrapper layout-split">
           <div className="text-panel">
             <h2>Classification 3 (p6)</h2>
-            <p>
+            <p style={{ color: "var(--lapis)", fontSize: "1.5rem" }}>
               In the third classification of the pajaritas tiling in the Sala de
               las Camas, we don’t respect the color distinctions, so we do not
               distinguish between different colored tiles. When we do so, this
               tiling is a part of a classification called p6. This group is
               notable for only having 6 fold rotational symmetry (in addition to
               the translational symmetry of any crystallographic group).
-              <sup>13</sup> <sup>14</sup>We can see this rotational symmetry in
+              <sup>13</sup> <sup>14</sup> We can see this rotational symmetry in
               the animation to the right. Specifically in this case, we have 6
               fold rotational symmetry where we can rotate 6 times about any
-              meeting of the point of 6 Pajaritas tiles before returning the
+              meeting of the point of 6 Pajaritas tiles before returning to the
               original configuration. This tiling also has translational
               symmetry as seen in the first classification.
             </p>
@@ -719,7 +719,7 @@ const App: React.FC = () => {
             black airplanes as seen in the animation to the right.<sup>22</sup>
           </p>
           <p style={{ color: "var(--lapis)", fontSize: "1.4rem" }}>
-            Looking at a point where four airplanes meet we, can rotate 180◦ to
+            Looking at a point where four airplanes meet we, can rotate 180&deg; to
             rotate every black airplane to a black airplane and every white
             airplane to a white airplane.
           </p>
@@ -745,6 +745,9 @@ const App: React.FC = () => {
           <div className="animation-panel">
             <AirplaneGlideReflectionalSymmetry />
           </div>
+          <div className="animation-panel">
+            <AirplaneReflectionSymmetry />
+          </div>
         </div>
       </section>
 
@@ -758,7 +761,7 @@ const App: React.FC = () => {
               distinctions between the black and white airplanes in the Hall of
               the Ambassadors. In doing so, we find that the center of rotation
               (as seen in the animation above from the first classification) now
-              has a 90◦ rotation giving it 4 fold rotational symmetry as seen in
+              has a 90&deg; rotation giving it 4 fold rotational symmetry as seen in
               the animation to the right.<sup>24</sup> In addition to the 4 fold
               rotational symmetry, this tile inherits all the symmetries from
               our first classification of translations, reflections, and glide
@@ -775,7 +778,7 @@ const App: React.FC = () => {
             </p>
           </div>
           <div className="animation-panel">
-            <AirplaneReflectionSymmetry />
+            <AirplaneRotationalSymmetry twoFold={false} />
           </div>
         </div>
       </section>
@@ -819,7 +822,7 @@ const App: React.FC = () => {
           <h2 style={{ color: "var(--lapis)" }}>References</h2>
           <p className="references">
             Bodner, B. Lynn. 2003. “Construction and Classifying Designs of
-            al-Andalus.” In Meet- ing Alhambra, ISAMA-BRIDGES Conference
+            al-Andalus.” In Meeting Alhambra, ISAMA-BRIDGES Conference
             Proceedings, edited by Javier Barrallo, Nathaniel Friedman, Juan
             Antonio Maldonado, José Martínez-Aroza, Reza Sarhangi, and Carlo
             Séquin, 61–68. Granada, Spain: University of Granada. isbn:
