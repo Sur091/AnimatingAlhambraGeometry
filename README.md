@@ -4,6 +4,8 @@ A web-based exhibition built for an Islamic art class, exploring the geometric s
 
 Live site: https://zippy-lokum-e54cc1.netlify.app/
 
+The following is an animation seen in the website ![construction animation](src/assets/pajaritaTesselation.gif)
+
 ## What the project covers
 
 The Alhambra's tilework is among the most mathematically sophisticated decorative art ever made. Medieval Nasrid craftsmen covered the palace walls with patterns that, centuries later, mathematicians would recognize as representing all 17 possible wallpaper symmetry groups. This project focuses on two tile shapes — the Pajarita and the Airplane — and uses animation to make their underlying geometry legible.
@@ -37,7 +39,3 @@ Animation sequencing taught me that the hard part is not making things move but 
 TypeScript enforced useful constraints. Typing the `tessellationVectors` arrays as `{ dx: number; dy: number }[]` and the component props like `twoFold: boolean` and `threeFold: boolean` meant the compiler caught errors that would otherwise have been invisible geometry bugs at runtime.
 
 The subject matter itself was the other education. Working out why the Airplane tile has 2-fold and 4-fold rotational symmetry but not 3-fold, and why the Pajarita has 3-fold and 6-fold but not 4-fold, required understanding the relationship between the underlying lattice and the symmetries it can support. That understanding is what made it possible to compute the tessellation vectors by hand rather than placing tiles by eye.
-
-## Example
-
-The following is an animation seen in the website ![construction animation](src/assets/pajaritaTesselation.gif)
